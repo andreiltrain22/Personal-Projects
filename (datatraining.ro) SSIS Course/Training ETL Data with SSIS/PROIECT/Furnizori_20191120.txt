@@ -1,0 +1,2 @@
+idfurnizor	denumire	locatie
+8000	Kika	Bucuresti

@@ -1,0 +1,1 @@
+custid	Customer_Name	orderid	orderdate	shippeddate	Shipper_Name	freight	Value	Freight_Value

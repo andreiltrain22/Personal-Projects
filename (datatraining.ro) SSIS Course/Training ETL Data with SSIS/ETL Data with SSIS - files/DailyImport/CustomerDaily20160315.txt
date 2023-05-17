@@ -1,0 +1,9 @@
+Customer_Id	Customer_Name	Import_Date
+14	Cust 14	3/15/2016
+15	Cust 15	3/15/2016
+16	Cust 16	3/15/2016
+17	Cust 17	3/15/2016
+18	Cust 18	3/15/2016
+19	Cust 19	3/15/2016
+20	Cust 20	3/15/2016
+21	Cust 21	3/15/2016

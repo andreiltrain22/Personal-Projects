@@ -1,0 +1,3280 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/19/2020 12:38:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANDEEI-TOSH"
+  DTS:CreatorName="Andeei-TOSH\Andeei"
+  DTS:DTSID="{D6D25D83-99B3-4931-9E3E-5DAD0C5BE4EA}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="1048"
+  DTS:ObjectName="ImportStage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{38288BBB-70C8-402E-8BA1-7C53C9D7E838}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - Clienti]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{CBFF1F35-E9B2-4487-941A-7BA039696C1D}"
+      DTS:ObjectName="Flat File Connection - Clienti">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@FilePath + "Clienti_" + @FileDate + ".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\PROIECT\Clienti_.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idclient"
+              DTS:DTSID="{022F5B64-4C34-46BB-8CD9-7BE56044BD36}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="nume"
+              DTS:DTSID="{F818813B-817D-4372-822D-5DBDF8F5FDA2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="locatie"
+              DTS:DTSID="{0AFA91B3-94AB-4162-B29E-31D2A34A1D67}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - CtgProd]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D52425E5-4387-468F-BF55-517FED17D562}"
+      DTS:ObjectName="Flat File Connection - CtgProd">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@FilePath + "Categ_Produse_" + @FileDate + ".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\PROIECT\Categ_Produse_.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idcategorie"
+              DTS:DTSID="{0A8049E2-FD42-484C-9532-6681142BA4EF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="denumire"
+              DTS:DTSID="{E6D04896-9A12-4E0E-A408-AFCD9D532DC8}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - Depozite]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6228BF40-4B33-49C7-878A-FEC797C2F61C}"
+      DTS:ObjectName="Flat File Connection - Depozite">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@FilePath + "Depozite_" + @FileDate + ".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\PROIECT\Depozite_.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="iddepozit"
+              DTS:DTSID="{1916328D-B881-495C-A024-74F412B066D8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="denumire"
+              DTS:DTSID="{E82B9D0C-1F40-43CF-96FE-C6BB184D09DF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="locatie"
+              DTS:DTSID="{23F7D823-AF9D-4418-A8D5-4BA0134831B7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idfurnizor"
+              DTS:DTSID="{465A2F3E-C632-4ACD-8E88-FC4580809EF1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - Facturi]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{98812388-79A9-4799-BD71-1627399E0ECD}"
+      DTS:ObjectName="Flat File Connection - Facturi">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@FilePath + "Facturi_" + @FileDate + ".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\PROIECT\Facturi_.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idfactura"
+              DTS:DTSID="{C22A015D-5D9B-4C76-891F-75BAAAF25AA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="datafactura"
+              DTS:DTSID="{D5E8828A-F717-4FD1-887B-4AED2204BA75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idprodus"
+              DTS:DTSID="{43902390-FEB8-403B-9CCE-5761B4B188F2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="cantitate"
+              DTS:DTSID="{E34F583B-93A0-426E-9569-F77EAB6EC7B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="pret"
+              DTS:DTSID="{AA5AB3BD-C1A0-484D-A89F-06A008422D3A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idclient"
+              DTS:DTSID="{28580D32-96F6-4EC0-B242-D8DF4A7D4E60}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="valoare"
+              DTS:DTSID="{85A69668-01DA-41BD-9C11-BC142510B0B1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - Furnizori]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D4259BFE-1741-4F20-A43E-2C4C2B4B76B7}"
+      DTS:ObjectName="Flat File Connection - Furnizori">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@FilePath + "Furnizori_" + @FileDate + ".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\PROIECT\Furnizori_.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idfurnizor"
+              DTS:DTSID="{9D2FB44C-765D-47D8-9C90-86A68A970CE5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="denumire"
+              DTS:DTSID="{55A391CA-3C01-493C-876A-5616CE56D9F7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="locatie"
+              DTS:DTSID="{5F2BBEA9-F60A-46C1-ABC9-C392CFFD3B17}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - Produse]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{AE843481-731A-4D58-8B5D-16973FBB6367}"
+      DTS:ObjectName="Flat File Connection - Produse">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@FilePath + "Produse_" + @FileDate + ".txt"</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\PROIECT\Produse_.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idprodus"
+              DTS:DTSID="{A4E2B76A-8D9A-4500-B8DB-3D3D429F5BBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="denumire"
+              DTS:DTSID="{C8D73159-A338-4964-8AC9-3C4FE43CA6E3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="idfurnizor"
+              DTS:DTSID="{43035852-C832-48FA-AF41-0F3CE6CEE101}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:TextQualified="True"
+              DTS:ObjectName="stoc"
+              DTS:DTSID="{EA364A01-2F46-494A-A6B4-FEB26F2465AA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="dataachizitie"
+              DTS:DTSID="{8F6DBA0C-63F2-4CF1-843C-0994FEE0EFC3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="perioadaexprirare"
+              DTS:DTSID="{01865A2F-8465-4F4E-A452-708666F8BA07}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="categorieprodus"
+              DTS:DTSID="{70D218D4-8043-45A7-99FA-055AD11E88D6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[VanzariCurs Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1BE3D98E-CE0A-4A4B-9F66-2CD258559F56}"
+      DTS:ObjectName="VanzariCurs Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=VanzariCurs;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[VanzariCursDWH Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{B4838EA0-3743-49F8-9303-16B0A1E5F7BD}"
+      DTS:ObjectName="VanzariCursDWH Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=VanzariCursDWH;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CD4212B6-E6DA-4568-9409-CEB4B52BDE33}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileDate">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F65754B2-517A-425C-8BAF-A24788BE616E}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;E:\\SSIS\\Curs SSIS_DataTraining\\Training ETL Data with SSIS\\PROIECT\\&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\PROIECT\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Get File Date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{32CDCEDE-0AE1-4969-A3A3-E187338DF1A4}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Get File Date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B4838EA0-3743-49F8-9303-16B0A1E5F7BD}"
+          SQLTask:SqlStatementSource="select convert(varchar(8), ImportDate, 112)&#xA;from AuditTbl&#xA;where Denumire = 'Proiect'"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::FileDate" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0EE6A7D1-3BA4-4D89-B959-4C2A87D853F3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import Clienti"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{DF3492E1-AB48-4E15-B7F8-26BF099F79B0}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Clienti"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Export Clienti to Stg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Clienti]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VanzariCurs Connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[VanzariCurs Connection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].Columns[idclient]"
+                          cachedDataType="i4"
+                          cachedName="idclient"
+                          externalMetadataColumnId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idclient]"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[idclient]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].Columns[nume]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="nume"
+                          externalMetadataColumnId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].ExternalColumns[nume]"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[nume]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].Columns[locatie]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="locatie"
+                          externalMetadataColumnId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].ExternalColumns[locatie]"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[locatie]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idclient]"
+                          dataType="i4"
+                          name="idclient" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].ExternalColumns[nume]"
+                          dataType="wstr"
+                          length="255"
+                          name="nume" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input].ExternalColumns[locatie]"
+                          dataType="wstr"
+                          length="255"
+                          name="locatie" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Clienti\Import Clienti from File"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1048"
+                  name="Import Clienti from File"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection - Clienti]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Clienti]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[idclient]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].ExternalColumns[idclient]"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[idclient]"
+                          name="idclient"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[nume]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].ExternalColumns[nume]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[nume]"
+                          name="nume"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[locatie]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].ExternalColumns[locatie]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].Columns[locatie]"
+                          name="locatie"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].ExternalColumns[idclient]"
+                          dataType="i4"
+                          name="idclient" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].ExternalColumns[nume]"
+                          dataType="wstr"
+                          length="255"
+                          name="nume" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output].ExternalColumns[locatie]"
+                          dataType="wstr"
+                          length="255"
+                          name="locatie" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1250"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import Clienti.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import Clienti\Export Clienti to Stg.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import Clienti\Import Clienti from File.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import Ctg Prod"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{E0722FAE-5B7B-4B09-84D4-9040660DD279}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Ctg Prod"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Export Ctg to Stg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Categ_Produse]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VanzariCurs Connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[VanzariCurs Connection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input].Columns[idcategorie]"
+                          cachedDataType="i4"
+                          cachedName="idcategorie"
+                          externalMetadataColumnId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idcategorie]"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].Columns[idcategorie]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input].Columns[denumire]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="denumire"
+                          externalMetadataColumnId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input].ExternalColumns[denumire]"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].Columns[denumire]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idcategorie]"
+                          dataType="i4"
+                          name="idcategorie" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input].ExternalColumns[denumire]"
+                          dataType="wstr"
+                          length="255"
+                          name="denumire" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1048"
+                  name="Import Ctg Prod from File"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection - CtgProd]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - CtgProd]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].Columns[idcategorie]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].ExternalColumns[idcategorie]"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].Columns[idcategorie]"
+                          name="idcategorie"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].Columns[denumire]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].ExternalColumns[denumire]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].Columns[denumire]"
+                          name="denumire"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].ExternalColumns[idcategorie]"
+                          dataType="i4"
+                          name="idcategorie" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output].ExternalColumns[denumire]"
+                          dataType="wstr"
+                          length="255"
+                          name="denumire" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1250"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import Ctg Prod.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import Depozite"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{4F460E9F-0521-419E-8542-14066F260A88}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Depozite"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Export Depozite to Stg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Depozite]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VanzariCurs Connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[VanzariCurs Connection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].Columns[iddepozit]"
+                          cachedDataType="i4"
+                          cachedName="iddepozit"
+                          externalMetadataColumnId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].ExternalColumns[iddepozit]"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[iddepozit]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].Columns[denumire]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="denumire"
+                          externalMetadataColumnId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].ExternalColumns[denumire]"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[denumire]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].Columns[locatie]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="locatie"
+                          externalMetadataColumnId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].ExternalColumns[locatie]"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[locatie]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].Columns[idfurnizor]"
+                          cachedDataType="i4"
+                          cachedName="idfurnizor"
+                          externalMetadataColumnId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idfurnizor]"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[idfurnizor]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].ExternalColumns[iddepozit]"
+                          dataType="i4"
+                          name="iddepozit" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].ExternalColumns[denumire]"
+                          dataType="wstr"
+                          length="255"
+                          name="denumire" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].ExternalColumns[locatie]"
+                          dataType="wstr"
+                          length="255"
+                          name="locatie" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idfurnizor]"
+                          dataType="i4"
+                          name="idfurnizor" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Depozite\Import Depozite from File"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1048"
+                  name="Import Depozite from File"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection - Depozite]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Depozite]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[iddepozit]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].ExternalColumns[iddepozit]"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[iddepozit]"
+                          name="iddepozit"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[denumire]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].ExternalColumns[denumire]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[denumire]"
+                          name="denumire"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[locatie]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].ExternalColumns[locatie]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[locatie]"
+                          name="locatie"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[idfurnizor]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].ExternalColumns[idfurnizor]"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].Columns[idfurnizor]"
+                          name="idfurnizor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].ExternalColumns[iddepozit]"
+                          dataType="i4"
+                          name="iddepozit" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].ExternalColumns[denumire]"
+                          dataType="wstr"
+                          length="255"
+                          name="denumire" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].ExternalColumns[locatie]"
+                          dataType="wstr"
+                          length="255"
+                          name="locatie" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output].ExternalColumns[idfurnizor]"
+                          dataType="i4"
+                          name="idfurnizor" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1250"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import Depozite.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import Depozite\Export Depozite to Stg.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import Depozite\Import Depozite from File.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import Facturi"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{8BEA2A6A-3DA5-4C99-87B7-3E8DCF27653F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Facturi"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Export Facturi to Stg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Facturi]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VanzariCurs Connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[VanzariCurs Connection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].Columns[idfactura]"
+                          cachedDataType="i4"
+                          cachedName="idfactura"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idfactura]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idfactura]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].Columns[datafactura]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="datafactura"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[datafactura]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[datafactura]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].Columns[idprodus]"
+                          cachedDataType="i4"
+                          cachedName="idprodus"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idprodus]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idprodus]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].Columns[cantitate]"
+                          cachedDataType="numeric"
+                          cachedName="cantitate"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[cantitate]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[cantitate]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].Columns[pret]"
+                          cachedDataType="numeric"
+                          cachedName="pret"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[pret]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[pret]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].Columns[idclient]"
+                          cachedDataType="i4"
+                          cachedName="idclient"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idclient]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idclient]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].Columns[valoare]"
+                          cachedDataType="numeric"
+                          cachedName="valoare"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[valoare]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[valoare]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idfactura]"
+                          dataType="i4"
+                          name="idfactura" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[datafactura]"
+                          dataType="dbTimeStamp"
+                          name="datafactura" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idprodus]"
+                          dataType="i4"
+                          name="idprodus" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[cantitate]"
+                          dataType="numeric"
+                          name="cantitate"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[pret]"
+                          dataType="numeric"
+                          name="pret"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idclient]"
+                          dataType="i4"
+                          name="idclient" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input].ExternalColumns[valoare]"
+                          dataType="numeric"
+                          name="valoare"
+                          precision="18" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Facturi\Import Facturi from File"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1048"
+                  name="Import Facturi from File"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection - Facturi]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Facturi]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idfactura]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[idfactura]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idfactura]"
+                          name="idfactura"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[datafactura]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[datafactura]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[datafactura]"
+                          name="datafactura"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idprodus]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[idprodus]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idprodus]"
+                          name="idprodus"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[cantitate]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[cantitate]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[cantitate]"
+                          name="cantitate"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[pret]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[pret]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[pret]"
+                          name="pret"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idclient]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[idclient]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[idclient]"
+                          name="idclient"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[valoare]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[valoare]"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].Columns[valoare]"
+                          name="valoare"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[idfactura]"
+                          dataType="i4"
+                          name="idfactura" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[datafactura]"
+                          dataType="dbTimeStamp"
+                          name="datafactura" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[idprodus]"
+                          dataType="i4"
+                          name="idprodus" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[cantitate]"
+                          dataType="numeric"
+                          name="cantitate"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[pret]"
+                          dataType="numeric"
+                          name="pret"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[idclient]"
+                          dataType="i4"
+                          name="idclient" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output].ExternalColumns[valoare]"
+                          dataType="numeric"
+                          name="valoare"
+                          precision="18" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1250"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import Facturi.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import Facturi\Export Facturi to Stg.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import Facturi\Import Facturi from File.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import Furnizori"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{57B62015-A2F6-40F9-9E5E-B9B2F6D78457}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Furnizori"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Export Furnizori to Stg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Furnizori]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VanzariCurs Connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[VanzariCurs Connection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].Columns[idfurnizor]"
+                          cachedDataType="i4"
+                          cachedName="idfurnizor"
+                          externalMetadataColumnId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idfurnizor]"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[idfurnizor]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].Columns[denumire]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="denumire"
+                          externalMetadataColumnId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].ExternalColumns[denumire]"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[denumire]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].Columns[locatie]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="locatie"
+                          externalMetadataColumnId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].ExternalColumns[locatie]"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[locatie]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idfurnizor]"
+                          dataType="i4"
+                          name="idfurnizor" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].ExternalColumns[denumire]"
+                          dataType="wstr"
+                          length="255"
+                          name="denumire" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input].ExternalColumns[locatie]"
+                          dataType="wstr"
+                          length="255"
+                          name="locatie" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1048"
+                  name="Import Furnizori from File"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection - Furnizori]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Furnizori]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[idfurnizor]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].ExternalColumns[idfurnizor]"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[idfurnizor]"
+                          name="idfurnizor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[denumire]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].ExternalColumns[denumire]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[denumire]"
+                          name="denumire"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[locatie]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].ExternalColumns[locatie]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].Columns[locatie]"
+                          name="locatie"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].ExternalColumns[idfurnizor]"
+                          dataType="i4"
+                          name="idfurnizor" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].ExternalColumns[denumire]"
+                          dataType="wstr"
+                          length="255"
+                          name="denumire" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output].ExternalColumns[locatie]"
+                          dataType="wstr"
+                          length="255"
+                          name="locatie" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1250"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import Furnizori.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import Furnizori\Import Furnizori from File.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\Import Produse"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{CFB7DED7-8241-47CA-80C5-ED9B23529E16}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Import Produse"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Sequence Container\Import Produse\Export Prod to Stg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Export Prod to Stg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[Produse]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1250</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Connections[OleDbConnection]"
+                      connectionManagerID="Package.ConnectionManagers[VanzariCurs Connection]"
+                      connectionManagerRefId="Package.ConnectionManagers[VanzariCurs Connection]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].Columns[idprodus]"
+                          cachedDataType="i4"
+                          cachedName="idprodus"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idprodus]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[idprodus]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].Columns[denumire]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="denumire"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[denumire]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[denumire]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].Columns[idfurnizor]"
+                          cachedDataType="i4"
+                          cachedName="idfurnizor"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idfurnizor]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[idfurnizor]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].Columns[stoc]"
+                          cachedDataType="numeric"
+                          cachedName="stoc"
+                          cachedPrecision="18"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[stoc]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[stoc]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].Columns[dataachizitie]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="dataachizitie"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[dataachizitie]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[dataachizitie]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].Columns[categorieprodus]"
+                          cachedDataType="i4"
+                          cachedName="categorieprodus"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[categorieprodus]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[categorieprodus]" />
+                        <inputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].Columns[perioadaexprirare]"
+                          cachedDataType="i4"
+                          cachedName="perioadaexprirare"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[perioadaexpirare]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[perioadaexprirare]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idprodus]"
+                          dataType="i4"
+                          name="idprodus" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[denumire]"
+                          dataType="wstr"
+                          length="255"
+                          name="denumire" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[idfurnizor]"
+                          dataType="i4"
+                          name="idfurnizor" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[stoc]"
+                          dataType="numeric"
+                          name="stoc"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[dataachizitie]"
+                          dataType="dbTimeStamp"
+                          name="dataachizitie" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[perioadaexpirare]"
+                          dataType="i4"
+                          name="perioadaexpirare" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input].ExternalColumns[categorieprodus]"
+                          dataType="i4"
+                          name="categorieprodus" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Produse\Export Prod to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Export Prod to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Produse\Export Prod to Stg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Sequence Container\Import Produse\Import Prod from File"
+                  componentClassID="Microsoft.FlatFileSource"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="1048"
+                  name="Import Prod from File"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Sequence Container\Import Produse\Import Prod from File.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[Flat File Connection - Produse]"
+                      connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Produse]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[idprodus]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[idprodus]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[idprodus]"
+                          name="idprodus"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[denumire]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[denumire]"
+                          length="255"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[denumire]"
+                          name="denumire"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[idfurnizor]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[idfurnizor]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[idfurnizor]"
+                          name="idfurnizor"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[stoc]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[stoc]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[stoc]"
+                          name="stoc"
+                          precision="18"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[dataachizitie]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[dataachizitie]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[dataachizitie]"
+                          name="dataachizitie"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[perioadaexprirare]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[perioadaexprirare]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[perioadaexprirare]"
+                          name="perioadaexprirare"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[categorieprodus]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[categorieprodus]"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].Columns[categorieprodus]"
+                          name="categorieprodus"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[idprodus]"
+                          dataType="i4"
+                          name="idprodus" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[denumire]"
+                          dataType="wstr"
+                          length="255"
+                          name="denumire" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[idfurnizor]"
+                          dataType="i4"
+                          name="idfurnizor" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[stoc]"
+                          dataType="numeric"
+                          name="stoc"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[dataachizitie]"
+                          dataType="dbTimeStamp"
+                          name="dataachizitie" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[perioadaexprirare]"
+                          dataType="i4"
+                          name="perioadaexprirare" />
+                        <externalMetadataColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output].ExternalColumns[categorieprodus]"
+                          dataType="i4"
+                          name="categorieprodus" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1250"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Sequence Container\Import Produse.Paths[Flat File Source Output]"
+                  endId="Package\Sequence Container\Import Produse\Export Prod to Stg.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Sequence Container\Import Produse\Import Prod from File.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{9978BAA5-B58F-4B80-95FA-BC1568BD7D34}"
+          DTS:From="Package\Sequence Container\Import Furnizori"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\Import Depozite" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{E06C822C-0898-4AE8-BE1F-5A1500119181}"
+          DTS:From="Package\Sequence Container\Import Ctg Prod"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\Import Produse" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{2F43A1DA-C921-49F5-AC5F-BED65C590804}"
+          DTS:From="Package\Sequence Container\Import Clienti"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\Import Facturi" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{2B0114B0-F02F-4C41-9CDE-95E6B33EB995}"
+          DTS:From="Package\Sequence Container\Import Furnizori"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\Import Produse" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{0109E21E-EDE5-4A91-87A3-E40A9C7E9F36}"
+          DTS:From="Package\Sequence Container\Import Produse"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Sequence Container\Import Facturi" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Tables from Stg DB"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B99FFD09-8BA9-4995-A717-E4A6B85AF424}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Tables from Stg DB"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{1BE3D98E-CE0A-4A4B-9F66-2CD258559F56}"
+          SQLTask:SqlStatementSource="delete from [dbo].[Produse]&#xA;delete from [dbo].[Depozite]&#xA;delete from [dbo].[Facturi]&#xA;delete from [dbo].[Categ_Produse]&#xA;delete from [dbo].[Clienti]&#xA;delete from [dbo].[Furnizori]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Import Date"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F613B96F-82CE-4548-A151-4CE24CD9BB37}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Import Date"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B4838EA0-3743-49F8-9303-16B0A1E5F7BD}"
+          SQLTask:SqlStatementSource="UPDATE       AuditTbl&#xA;SET                ImportDate = DATEADD(dd, 1, ImportDate)&#xA;WHERE        (Denumire = 'Proiect')" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{47886999-A561-4136-8065-244490C20272}"
+      DTS:From="Package\Get File Date"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Truncate Tables from Stg DB" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A9D8C778-6942-4311-BD57-FFF36D04C102}"
+      DTS:From="Package\Truncate Tables from Stg DB"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Sequence Container" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{146B5F20-8F25-43ED-A711-7F710C5414A6}"
+      DTS:From="Package\Sequence Container"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Update Import Date" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence Container\Import Ctg Prod"
+          TopLeft="214,23" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Sequence Container\Import Clienti"
+          TopLeft="422,19" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence Container\Import Depozite"
+          TopLeft="37,97" />
+        <NodeLayout
+          Size="148,42"
+          Id="Package\Sequence Container\Import Facturi"
+          TopLeft="434,141" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Sequence Container\Import Furnizori"
+          TopLeft="39,25" />
+        <NodeLayout
+          Size="154,42"
+          Id="Package\Sequence Container\Import Produse"
+          TopLeft="219,99" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="116.5,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="294.25,65">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="494.5,61">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="13.5,80"
+              Start="0,0"
+              End="13.5,72.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,36"
+                    Point2="0,40"
+                    Point3="4,40" />
+                  <mssgle:LineSegment
+                    End="9.5,40" />
+                  <mssgle:CubicBezierSegment
+                    Point1="9.5,40"
+                    Point2="13.5,40"
+                    Point3="13.5,44" />
+                  <mssgle:LineSegment
+                    End="13.5,72.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="142.333333333333,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="129.333333333333,32"
+              Start="0,0"
+              End="129.333333333333,24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.9961290322581" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.9961290322581"
+                    Point2="0,15.9961290322581"
+                    Point3="4,15.9961290322581" />
+                  <mssgle:LineSegment
+                    End="125.333333333333,15.9961290322581" />
+                  <mssgle:CubicBezierSegment
+                    Point1="125.333333333333,15.9961290322581"
+                    Point2="129.333333333333,15.9961290322581"
+                    Point3="129.333333333333,19.9961290322581" />
+                  <mssgle:LineSegment
+                    End="129.333333333333,24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="373,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="61,42"
+              Start="0,0"
+              End="53.5,42">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="26.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26.5,0"
+                    Point2="30.5,0"
+                    Point3="30.5,4" />
+                  <mssgle:LineSegment
+                    End="30.5,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="30.5,38"
+                    Point2="30.5,42"
+                    Point3="34.5,42" />
+                  <mssgle:LineSegment
+                    End="53.5,42" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="588,211"
+          Size="588,254"
+          Id="Package\Sequence Container"
+          TopLeft="197,148" />
+        <NodeLayout
+          Size="142,42"
+          Id="Package\Get File Date"
+          TopLeft="408,9" />
+        <NodeLayout
+          Size="171,42"
+          Id="Package\Truncate Tables from Stg DB"
+          TopLeft="395,78" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="479.75,51">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27"
+              Start="0,0"
+              End="0,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="480.5,120">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.5,28"
+              Start="0,0"
+              End="10.5,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10"
+                    Point2="0,14"
+                    Point3="4,14" />
+                  <mssgle:LineSegment
+                    End="6.5,14" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.5,14"
+                    Point2="10.5,14"
+                    Point3="10.5,18" />
+                  <mssgle:LineSegment
+                    End="10.5,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Update Import Date"
+          TopLeft="404,426" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="491.25,402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24"
+              Start="0,0"
+              End="0,16.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import Ctg Prod">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Sequence Container\Import Ctg Prod\Import Ctg Prod from File"
+          TopLeft="199.5,24.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg"
+          TopLeft="207,109" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Ctg Prod.Paths[Flat File Source Output]"
+          TopLeft="300.5,66.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-12.5,42.5"
+              Start="0,0"
+              End="-12.5,35">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.25"
+                    Point2="0,21.25"
+                    Point3="-4,21.25" />
+                  <mssgle:LineSegment
+                    End="-8.5,21.25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-8.5,21.25"
+                    Point2="-12.5,21.25"
+                    Point3="-12.5,25.25" />
+                  <mssgle:LineSegment
+                    End="-12.5,35" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import Clienti">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Sequence Container\Import Clienti\Import Clienti from File"
+          TopLeft="233.5,4.5" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Sequence Container\Import Clienti\Export Clienti to Stg"
+          TopLeft="225.5,83.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Clienti.Paths[Flat File Source Output]"
+          TopLeft="328.5,46.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-15.5,37"
+              Start="0,0"
+              End="-15.5,29.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5"
+                    Point2="0,18.5"
+                    Point3="-4,18.5" />
+                  <mssgle:LineSegment
+                    End="-11.5,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-11.5,18.5"
+                    Point2="-15.5,18.5"
+                    Point3="-15.5,22.5" />
+                  <mssgle:LineSegment
+                    End="-15.5,29.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import Depozite">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Sequence Container\Import Depozite\Import Depozite from File"
+          TopLeft="161.5,23.5" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Sequence Container\Import Depozite\Export Depozite to Stg"
+          TopLeft="157.5,109.5" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Depozite.Paths[Flat File Source Output]"
+          TopLeft="262.5,65.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-11.5,44"
+              Start="0,0"
+              End="-11.5,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="-4,22" />
+                  <mssgle:LineSegment
+                    End="-7.5,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-7.5,22"
+                    Point2="-11.5,22"
+                    Point3="-11.5,26" />
+                  <mssgle:LineSegment
+                    End="-11.5,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import Facturi">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Sequence Container\Import Facturi\Import Facturi from File"
+          TopLeft="229,35" />
+        <NodeLayout
+          Size="178,42"
+          Id="Package\Sequence Container\Import Facturi\Export Facturi to Stg"
+          TopLeft="228,121" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Facturi.Paths[Flat File Source Output]"
+          TopLeft="325.5,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-8.5,44"
+              Start="0,0"
+              End="-8.5,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="-4,22" />
+                  <mssgle:LineSegment
+                    End="-4.5,22" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-4.5,22"
+                    Point2="-8.5,22"
+                    Point3="-8.5,26" />
+                  <mssgle:LineSegment
+                    End="-8.5,36.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import Furnizori">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Sequence Container\Import Furnizori\Import Furnizori from File"
+          TopLeft="202,54" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg"
+          TopLeft="206,137" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Furnizori.Paths[Flat File Source Output]"
+          TopLeft="301.25,96">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <TaskHost
+    design-time-name="Package\Sequence Container\Import Produse">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Sequence Container\Import Produse\Import Prod from File"
+          TopLeft="254,91" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Sequence Container\Import Produse\Export Prod to Stg"
+          TopLeft="255,182" />
+        <EdgeLayout
+          Id="Package\Sequence Container\Import Produse.Paths[Flat File Source Output]"
+          TopLeft="342,133">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49"
+              Start="0,0"
+              End="0,41.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Ctg Prod\Export Ctg to Stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Clienti\Export Clienti to Stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Depozite\Export Depozite to Stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Facturi\Export Facturi to Stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Furnizori\Export Furnizori to Stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Sequence Container\Import Produse\Export Prod to Stg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

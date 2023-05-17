@@ -1,0 +1,4 @@
+customer	account	role
+100	10	2
+102	11	2
+105	89	2

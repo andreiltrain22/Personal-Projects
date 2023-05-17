@@ -1,0 +1,2 @@
+idfactura	datafactura	idprodus	cantitate	pret	idclient	valoare
+6	2019-11-23	9002	1	500	4000	500

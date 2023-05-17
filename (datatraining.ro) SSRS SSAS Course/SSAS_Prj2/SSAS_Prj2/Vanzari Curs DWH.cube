@@ -1,0 +1,235 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="b9622c9c-9f43-431a-b36f-26ad9452fa78" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Vanzari Curs DWH</ID>
+  <Name>Vanzari Curs DWH</Name>
+  <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+  <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramLayout</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowRelationshipNames</Name>
+      <Value>false</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:UseDiagramDefaultLayout</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramViewPortTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingLeft</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramBoundingTop</Name>
+      <Value>0</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:DiagramZoom</Name>
+      <Value>100</Value>
+    </Annotation>
+  </Annotations>
+  <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+  <State>Unprocessed</State>
+  <Dimensions>
+    <Dimension dwd:design-time-name="bf9a6925-4e28-42b9-afca-e0e9f67c255b">
+      <ID>Dim Date 1</ID>
+      <Name>Dim Date 1</Name>
+      <DimensionID>Dim Date 1</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="724fedbc-493f-4b1e-95b2-eacc6cf10a7f">
+          <AttributeID>Date Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="822d299c-6ca9-4c77-ba8d-157035056530">
+      <ID>Dim Produse</ID>
+      <Name>Dim Produse</Name>
+      <DimensionID>Dim Produse</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="f2f58af9-9a54-4743-b8eb-40a54f18b5ce">
+          <AttributeID>Produs Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="476b022a-41f4-4440-ae55-8f80df4f2c54">
+      <ID>Dim Clienti</ID>
+      <Name>Dim Clienti</Name>
+      <DimensionID>Dim Clienti</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="16264936-0eb8-4d2d-824d-8c62837f4a83">
+          <AttributeID>Client Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+    <Dimension dwd:design-time-name="fdbd83db-87c4-4ef7-8548-f86400210258">
+      <ID>Dim Furnizori</ID>
+      <Name>Dim Furnizori</Name>
+      <DimensionID>Dim Furnizori</DimensionID>
+      <Attributes>
+        <Attribute dwd:design-time-name="0b137d04-83f5-4538-b8ab-f89859a79cd6">
+          <AttributeID>Furnizor Key</AttributeID>
+        </Attribute>
+      </Attributes>
+    </Dimension>
+  </Dimensions>
+  <MeasureGroups>
+    <MeasureGroup dwd:design-time-name="0a66b4bc-62c3-4aba-bbb2-9615270c0f26">
+      <ID>Fact Facturi</ID>
+      <Name>Fact Facturi</Name>
+      <CreatedTimestamp>0001-01-01T00:00:00Z</CreatedTimestamp>
+      <LastSchemaUpdate>0001-01-01T00:00:00Z</LastSchemaUpdate>
+      <LastProcessed>0001-01-01T00:00:00Z</LastProcessed>
+      <State>Unprocessed</State>
+      <Measures>
+        <Measure dwd:design-time-name="6b9f0ec9-af3f-4c33-be7e-149de127f800">
+          <ID>Idfactura</ID>
+          <Name>Idfactura</Name>
+          <Source dwd:design-time-name="29c964bf-7dd8-481e-a90d-6f62a21c84ed">
+            <DataType>Integer</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="97376176-0c8c-46fe-8c6a-19e529e39bfd">
+              <TableID>dbo_FactFacturi</TableID>
+              <ColumnID>idfactura</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="306241dd-162b-46ca-8f92-c6eea2954d52">
+          <ID>Cantitate</ID>
+          <Name>Cantitate</Name>
+          <Source dwd:design-time-name="57844e9f-f081-4d94-afc9-98e8f5c36871">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="8b314b71-f01d-4503-ae14-c3587d24e0c6">
+              <TableID>dbo_FactFacturi</TableID>
+              <ColumnID>Cantitate</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c035a529-6ec4-42af-9407-28c09066c67a">
+          <ID>Pret</ID>
+          <Name>Pret</Name>
+          <Source dwd:design-time-name="7a31336c-5409-48b0-9a43-43b79971d88d">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="05252c3c-5851-431c-af6f-8983a7173b22">
+              <TableID>dbo_FactFacturi</TableID>
+              <ColumnID>Pret</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="c24b1e3d-6bce-4bb0-a720-027d711a193c">
+          <ID>Valoare</ID>
+          <Name>Valoare</Name>
+          <Source dwd:design-time-name="8fdce5d7-bb00-4743-be90-bf38b4045c8b">
+            <DataType>Double</DataType>
+            <Source xsi:type="ColumnBinding" dwd:design-time-name="4a04000e-eec3-46d4-8e74-860aceb0121c">
+              <TableID>dbo_FactFacturi</TableID>
+              <ColumnID>Valoare</ColumnID>
+            </Source>
+          </Source>
+        </Measure>
+        <Measure dwd:design-time-name="428063d8-98a1-47ba-9622-57cda0f7eac1">
+          <ID>Fact Facturi Count</ID>
+          <Name>Fact Facturi Count</Name>
+          <AggregateFunction>Count</AggregateFunction>
+          <Source dwd:design-time-name="391403d3-5a3b-4965-a469-407c6360561e">
+            <DataType>Integer</DataType>
+            <DataSize>4</DataSize>
+            <Source xsi:type="RowBinding" dwd:design-time-name="7bbf7af6-1a00-423a-b4b2-c545d64016bb">
+              <TableID>dbo_FactFacturi</TableID>
+            </Source>
+          </Source>
+        </Measure>
+      </Measures>
+      <StorageMode>Molap</StorageMode>
+      <ProcessingMode>Regular</ProcessingMode>
+      <Dimensions>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="b6e75e14-85b5-4cf1-b94e-0f8486a2b3bb">
+          <CubeDimensionID>Dim Date 1</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="644afde6-a287-4130-a762-7ab88bad936b">
+              <AttributeID>Date Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1434b676-8076-47e2-af01-e271760a6e8b">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="4eacd808-ce9c-4eaa-90bf-7a74320f3914">
+                    <TableID>dbo_FactFacturi</TableID>
+                    <ColumnID>DateKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="040d494a-e0ec-4c54-835c-877a73e633c4">
+          <CubeDimensionID>Dim Produse</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="42a9858f-2a75-4f54-aecd-4a03a00f6189">
+              <AttributeID>Produs Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="1e4f6f98-7e6d-43fb-b0bf-68c3d3238767">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="1364d701-4f1d-4d1a-aee9-dad069f43eca">
+                    <TableID>dbo_FactFacturi</TableID>
+                    <ColumnID>ProdusKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="cba851d9-fd02-4cbe-bcb2-504e7d8ca8a5">
+          <CubeDimensionID>Dim Clienti</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="65942838-a2d6-4d9d-a8b3-c864ebef809a">
+              <AttributeID>Client Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="6d5d3dc9-6e50-461a-9365-59ce6df23d85">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="63e9f9a6-dc11-47ea-a764-a4bbfc5bd9d9">
+                    <TableID>dbo_FactFacturi</TableID>
+                    <ColumnID>ClientKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+        <Dimension xsi:type="RegularMeasureGroupDimension" dwd:design-time-name="a9059806-e33c-4a9e-b984-2ebd2b9a6081">
+          <CubeDimensionID>Dim Furnizori</CubeDimensionID>
+          <Attributes>
+            <Attribute dwd:design-time-name="18079845-de37-442b-a5e7-e81479bf2e2b">
+              <AttributeID>Furnizor Key</AttributeID>
+              <KeyColumns>
+                <KeyColumn dwd:design-time-name="4c53d2ee-6357-486e-8f1e-593163d83a18">
+                  <DataType>Integer</DataType>
+                  <Source xsi:type="ColumnBinding" dwd:design-time-name="d2cbcd48-2c5a-4a27-a08c-6adf8bdb111d">
+                    <TableID>dbo_FactFacturi</TableID>
+                    <ColumnID>FurnizorKey</ColumnID>
+                  </Source>
+                </KeyColumn>
+              </KeyColumns>
+              <Type>Granularity</Type>
+            </Attribute>
+          </Attributes>
+        </Dimension>
+      </Dimensions>
+      <Partitions />
+    </MeasureGroup>
+  </MeasureGroups>
+  <Source dwd:design-time-name="3d7d0a09-85b2-49e5-bb1e-6dbd84e20d54">
+    <DataSourceViewID>Vanzari Curs DWH</DataSourceViewID>
+  </Source>
+</Cube>

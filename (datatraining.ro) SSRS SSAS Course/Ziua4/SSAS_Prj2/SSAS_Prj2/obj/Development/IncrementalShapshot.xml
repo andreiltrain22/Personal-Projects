@@ -1,0 +1,208 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SSAS_Prj2</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>LUUHvxHKJJtiFdZkU04SvDBUYmI=21.11.2020 11:50:2221.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Training DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>bmx/lHDz7D2OEoO4Iu37NeQvb3A=21.11.2020 11:50:2221.11.2020 11:50:24</TimeStamp>
+        <ID>
+          <String>Vanzari Curs DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>YcRemsrZPiKt4zWEY5Y7w+AHrP4=22.11.2020 12:36:5422.11.2020 12:36:54</TimeStamp>
+        <ID>
+          <String>Adventure Works DW2014</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>90sV31njlQ5i1A2fJeSL4Hmojb0=22.11.2020 10:01:1521.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Training DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>WZ8LD9gc07Nv7JSCEME/dNQlSJY=21.11.2020 11:50:2221.11.2020 11:50:24</TimeStamp>
+        <ID>
+          <String>Vanzari Curs DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>q+TA8gr8rjbj0f/swB/hAtMlwjw=22.11.2020 13:21:3122.11.2020 12:38:23</TimeStamp>
+        <ID>
+          <String>Adventure Works DW2014</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Ki0JlXlq+znrdVYU1XfA7q3bgTQ=21.11.2020 13:42:0021.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Dim Clienti</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Ua3hTf+akibaqxbYHD+v5OVOTO8=21.11.2020 13:13:0821.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Dim Customers</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>IgTiaK4MvrSCvUorZ/CbdzoKivc=21.11.2020 13:43:0021.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Dim Date 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>dU9+2hDjyHVlPp9AFbddBYzfhxo=21.11.2020 13:18:5021.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>yNl6YnNVGgF5jQdvJt0D9GiM4O8=21.11.2020 13:42:0021.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Dim Furnizori</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>S9CDasjy60bRFHhbkIMjPInoUjo=21.11.2020 13:13:0821.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Dim Products</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>UoFoSgDe6BIpyB/9F/r3BX6YXWE=21.11.2020 13:42:0021.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Dim Produse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>xeW4DOR/n4IcwyFHuo03wDc4c9c=21.11.2020 13:13:2521.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Dim Shippers</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Gm5F5UVft4/hnzPyrbAkJOG6+hU=21.11.2020 13:13:3921.11.2020 12:28:00</TimeStamp>
+        <ID>
+          <String>Dim Categories</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>B1QhJwU6LU3b9pwJa1KnBK1Z+xY=22.11.2020 12:40:1422.11.2020 12:40:13</TimeStamp>
+        <ID>
+          <String>Dim Sales Territory</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>/kIVpI3I8g7bmUhHnSpwT4fehRc=22.11.2020 13:07:1822.11.2020 12:40:13</TimeStamp>
+        <ID>
+          <String>Dim Customer</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>xblla/oLNPi3uwXPMY1zqPLw3Hg=22.11.2020 12:53:0922.11.2020 12:40:13</TimeStamp>
+        <ID>
+          <String>Dim Product</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>VcTdMD6dgV8vuOmlIkdaASUmCCo=22.11.2020 12:54:4422.11.2020 12:40:13</TimeStamp>
+        <ID>
+          <String>Dim Currency</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>TbHq88oVsrzYxuSwfDKEaeEu8I4=22.11.2020 12:56:4922.11.2020 12:40:13</TimeStamp>
+        <ID>
+          <String>Dim Employee</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>2cQ8bwY4dVTvYslaMg0G+5AmCBo=22.11.2020 12:56:0222.11.2020 12:40:13</TimeStamp>
+        <ID>
+          <String>Dim Reseller</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Ac0dJZzRqy/Pqs/CP/spzSHxEr4=22.11.2020 13:03:1222.11.2020 12:46:31</TimeStamp>
+        <ID>
+          <String>Dim Date AW</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>WNczkI9j2I1M5pcrYngG3Xs7Amg=21.11.2020 13:57:3521.11.2020 11:50:24TD64GldrarAwIdDRVGyp3QKys+k=21.11.2020 12:31:5621.11.2020 11:50:24</TimeStamp>
+        <ID>
+          <String>Vanzari Curs DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>2Ke4ORplUuh15HvVMWlcnTS9Lpc=22.11.2020 13:33:3822.11.2020 12:40:13WQeknqj85c0c0wEQy4Xz+zu/sCE=22.11.2020 13:21:3122.11.2020 12:40:13</TimeStamp>
+        <ID>
+          <String>Adventure Works DW2014</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>6/YMpYzIIGeHUeOA1SNBng81UVw=22.11.2020 13:33:4221.11.2020 11:50:23jLd7T/bGAmSxOkCVmQ1LqvqwfZ8=22.11.2020 10:05:0621.11.2020 11:50:23</TimeStamp>
+        <ID>
+          <String>Training DWH</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>rqK48Dx+1XBPrGoAkRPEzPdgSKU=21.11.2020 11:50:2321.11.2020 11:50:22</TimeStamp>
+      <ID>
+        <String>SSAS_Prj2</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2020-11-22T11:33:45.996667Z</LastDeployed>
+</DeploymentSnapshot>

@@ -1,0 +1,78 @@
+CategoryName	ProductName	Sales
+Grains/Cereals	Product CPHFY	7122.3600000
+Seafood	Product YHXGE	20867.3400000
+Confections	Product PAFRH	17215.7800000
+Condiments	Product XYZPE	14352.6000000
+Beverages	Product BWRLG	8177.4900000
+Confections	Product SMIOH	15099.8800000
+Confections	Product FPYPN	9244.6000000
+Condiments	Product EPEIM	5347.2000000
+Seafood	Product TTEEX	8680.3500000
+Condiments	Product XYWBZ	13869.8900000
+Beverages	Product ZZZHR	23526.7000000
+Beverages	Product RECZE	16355.9600000
+Grains/Cereals	Product OVLQI	7661.5500000
+Dairy Products	Product ASTMN	1648.1300000
+Beverages	Product HHYDP	12788.1000000
+Dairy Products	Product OSFNS	12257.6600000
+Condiments	Product VAIIV	7137.0000000
+Meat/Poultry	Product AOZBW	7226.5000000
+Condiments	Product LUNZZ	9171.6300000
+Confections	Product XKXDO	5862.6200000
+Meat/Poultry	Product VJXYN	80368.6700000
+Beverages	Product JYGFE	15760.4400000
+Condiments	Product IMEHJ	3044.0000000
+Confections	Product EZZPR	3958.0800000
+Dairy Products	Product WHBYK	46825.4800000
+Produce	Product APITJ	41819.6500000
+Dairy Products	Product QMVUN	12901.7700000
+Seafood	Product AQOKR	4338.1800000
+Dairy Products	Product XWOXC	14920.8800000
+Grains/Cereals	Product JLUDZ	4601.7000000
+Confections	Product MYNXN	1368.7100000
+Produce	Product BKAZJ	2432.5000000
+Condiments	Product LQMGN	3383.0000000
+Dairy Products	Product UKXRI	71155.7000000
+Condiments	Product VJIEO	9915.9500000
+Condiments	Product KSBRM	8567.9000000
+Condiments	Product WVJFP	12772.0000000
+Beverages	Product TOONT	10672.6500000
+Produce	Product OFBNT	25696.6400000
+Condiments	Product ICKNK	16701.1000000
+Condiments	Product KSZOI	1784.8300000
+Produce	Product HMLNI	22044.3000000
+Confections	Product WUXYK	47234.9700000
+Confections	Product BIUDV	3437.6900000
+Beverages	Product QDOMO	141396.7400000
+Dairy Products	Product MYMOI	19551.0300000
+Confections	Product QHFFP	22563.3600000
+Beverages	Product QOGNU	4504.3700000
+Grains/Cereals	Product VKCMF	42593.0600000
+Seafood	Product YZIXQ	17910.6300000
+Dairy Products	Product NUNAW	8404.1600000
+Beverages	Product XLXQF	2396.8000000
+Seafood	Product LYERX	13424.2000000
+Beverages	Product NEVTJ	13644.0000000
+Grains/Cereals	Product HCQDE	21957.9700000
+Meat/Poultry	Product QAQRL	4728.2400000
+Grains/Cereals	Product RJVNM	8575.0000000
+Seafood	Product ACRVI	5881.6800000
+Confections	Product HLGZA	19849.1400000
+Meat/Poultry	Product YYWRT	17426.4000000
+Seafood	Product EVFFA	2688.4000000
+Produce	Product PWCJB	7991.4900000
+Meat/Poultry	Product BLCAX	32698.3800000
+Seafood	Product WEUJZ	3997.2000000
+Seafood	Product POXFU	4960.4400000
+Meat/Poultry	Product BKGEA	20574.1700000
+Confections	Product VJZZH	9104.0000000
+Beverages	Product LSOFL	12294.5400000
+Seafood	Product CBRRL	5883.0000000
+Grains/Cereals	Product QSRXF	3232.9500000
+Seafood	Product GMKIJ	13458.4600000
+Confections	Product TBTBL	8714.0000000
+Confections	Product LYLNI	3704.4000000
+Seafood	Product CKEDC	29171.8800000
+Dairy Products	Product COAXA	21942.3600000
+Beverages	Product SWNJY	6350.4000000
+Dairy Products	Product GEEOO	24900.1300000

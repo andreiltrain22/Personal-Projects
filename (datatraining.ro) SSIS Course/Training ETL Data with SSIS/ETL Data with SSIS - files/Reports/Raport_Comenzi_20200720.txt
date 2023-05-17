@@ -1,0 +1,5 @@
+ProductName	Sales
+Product test80	174.0000
+Product test78	168.0000
+Product test81	167.4000
+Product test79	98.0000

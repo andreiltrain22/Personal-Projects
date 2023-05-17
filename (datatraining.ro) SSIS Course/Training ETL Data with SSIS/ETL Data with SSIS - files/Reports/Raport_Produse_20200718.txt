@@ -1,0 +1,3 @@
+ProductName	Qty	Sales
+Product test78	120	16800.0000000
+Product test79	10	100.0000000

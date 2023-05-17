@@ -1,0 +1,2 @@
+idprodus	denumire	idfurnizor	stoc	dataachizitie	perioadaexprirare	categorieprodus
+

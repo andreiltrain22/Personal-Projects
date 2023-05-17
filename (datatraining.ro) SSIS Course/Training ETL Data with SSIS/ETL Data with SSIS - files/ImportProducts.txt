@@ -1,0 +1,6 @@
+productid	productname	supplierid	categoryid	unitprice	discontinued
+78	Product test78	1	1	18.00	0
+79	Product test79	1	1	19.00	0
+80	Product test80	1	2	10.00	0
+81	Product test81	100	1	19.00	0
+82	Product test80	1	200	10.00	0

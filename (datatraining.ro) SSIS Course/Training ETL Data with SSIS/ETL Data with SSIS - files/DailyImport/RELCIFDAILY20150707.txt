@@ -1,0 +1,4 @@
+customer	account	role
+700	10	2
+705	89	2
+707	99	2

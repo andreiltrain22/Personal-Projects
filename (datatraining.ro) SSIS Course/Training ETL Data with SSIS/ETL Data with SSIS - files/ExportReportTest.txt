@@ -1,0 +1,2 @@
+custid	companyname	incasari	cantitate
+85	Customer ENQZT	17060	135

@@ -1,0 +1,26 @@
+Id Anunt,Tip Apartament (nr. Camere),Localitate,Pret,An constructie,Confort,Status,Comision,Luna anunt
+Id 100,2,Bucuresti,55000,1989,cf. 1,vandut,1650,Martie
+Id 1003,2,Bucuresti,63000,1978,cf. 1,liber,0,Iulie
+Id 1004,2,Ploiesti,30000,2003,cf. 1,liber,0,Aprilie
+Id 101,3,Brasov,60000,1975,cf. 2,vandut,1800,Iulie
+Id 104,1,Brasov,25000,2002,cf. 2,vandut,750,Aprilie
+Id 1087,1,Bucuresti,42000,1987,cf. 2,vandut,1260,Iulie
+Id 112,1,Timisoara,30000,2010,cf. 1,liber,0,Iunie
+Id 1123,1,Bucuresti,45000,1984,cf. 1,liber,0,August
+Id 178,2,Lugoj,27500,2001,cf. 2,liber,0,Februarie
+Id 1789,1,Bucuresti,43000,2005,cf. 1,vandut,1290,Ianuarie
+Id 2005,4,Ploiesti,62000,2000,cf. 1,vandut,1860,Iulie
+Id 2009,4,Cluj,65000,2001,cf. 1,liber,0,Septembrie
+Id 2066,1,Brasov,24000,2009,cf. 2,liber,0,Octombrie
+Id 207,1,Bucuresti,36000,2004,cf. 2,vandut,1080,Martie
+Id 2071,2,Bucuresti,45000,1990,cf. 1,vandut,1350,Iulie
+Id 208,3,Cluj,62000,1986,cf. 1,liber,0,August
+Id 288,1,Timisoara,32000,2005,cf. 2,vandut,960,August
+Id 299,1,Bucuresti,43000,2007,cf. 1,vandut,1290,Martie
+Id 2999,3,Ploiesti,48000,2004,cf. 2,vandut,1440,Aprilie
+Id 323,2,Brasov,38500,1992,cf. 2,vandut,1155,Aprilie
+Id 333,2,Timisoara,36000,1995,cf. 1,liber,0,Ianuarie
+Id 3434,4,Brasov,61000,2008,cf. 1,liber,0,Septembrie
+Id 345,2,Lugoj,28000,1978,cf. 1,vandut,840,Octombrie
+Id 4325,3,Lugoj,54000,1994,cf. 1,vandut,1620,Noiembrie
+Id 6785,4,Timisoara,78000,2010,cf. 1,vandut,2340,Decembrie

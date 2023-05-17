@@ -1,0 +1,6 @@
+TransactionId	TransactionDate	TransactionAmount	Customer_Id
+100	3/12/2016	254	1
+101	3/12/2016	762	1
+102	3/12/2016	123	2
+103	3/12/2016	45	2
+104	3/12/2016	37	2

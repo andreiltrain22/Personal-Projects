@@ -1,0 +1,22 @@
+Client	Tip client	Localitate	Suma incasata (lei)
+ABC SRL	firma	Resita	1094
+Avisat SRL	firma	Timisoara	940
+Comprod SRL	firma	Arad	2103
+Cosmin Datcu	persoana fizica	Resita	2589
+Cristian Dumitru	persoana fizica	Timisoara	3065
+Dan Mocanu	persoana fizica	Deva	860
+Florin Marinescu	persoana fizica	Deva	3127
+Install proiect SRL	firma	Timisoara	3951
+Intercom SRL	firma	Timisoara	850
+Interprod SRL	firma	Timisoara	2359
+Ion Daminescu	persoana fizica	Deva	750
+Ionescu Alin	persoana fizica	Arad	1200
+Junior SRL	firma	Deva	910
+Minerva SRL	firma	Arad	1023
+Monica SRL	firma	Resita	3582
+Sandor Martin	persoana fizica	Arad	3215
+Sigur SA	firma	Arad	1258
+Sorin Costea	persoana fizica	Arad	2146
+Sotq SA	firma	Deva	2410
+Vasile Popescu	persoana fizica	Arad	1267
+Victor Ionescu	persoana fizica	Resita	2941

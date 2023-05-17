@@ -1,0 +1,89 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="85080363-2683-471d-b2db-b1d5d7e31545" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Training DWH</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fact Orders</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="5e3d91f3-83fc-4687-b28e-ebec1bd4404c">
+          <ID>Fact Orders</ID>
+          <Name>Fact Orders</Name>
+          <CreatedTimestamp>2020-11-21T07:48:46.613333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2020-11-21T09:21:47.603333Z</LastSchemaUpdate>
+          <LastProcessed>2020-11-21T07:49:00.28Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="fdbeabd4-0e56-45bb-ab66-22d00ce17322">
+            <DataSourceViewID>Training DWH</DataSourceViewID>
+            <TableID>dbo_Fact_Orders</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="ad657bdf-a2c4-4249-bb3e-9e0c630e2757">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="824509ea-f147-4361-a783-70b760deb5d8" />
+          </ProactiveCaching>
+          <EstimatedSize>19730</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Orders 1</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="0cfc7286-9fb0-463d-99bf-ebf5e0a3f42e">
+          <ID>Fact Orders</ID>
+          <Name>Fact Orders</Name>
+          <CreatedTimestamp>2020-11-21T07:48:46.613333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2020-11-21T09:21:47.603333Z</LastSchemaUpdate>
+          <LastProcessed>2020-11-21T07:49:00.28Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="c5f562ba-ce0d-4ffa-8d1f-404077456e83">
+            <DataSourceViewID>Training DWH</DataSourceViewID>
+            <TableID>dbo_Fact_Orders</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="a195b0e1-2f87-4d7f-953a-6429ff3d483b">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="59027cfa-5a35-4374-87a0-f00c8297fd3c" />
+          </ProactiveCaching>
+          <EstimatedSize>19730</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+    <MeasureGroup>
+      <ID>Fact Orders 2</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="0802cedd-46b0-48e9-b252-f74ca0cdac64">
+          <ID>Fact Orders</ID>
+          <Name>Fact Orders</Name>
+          <CreatedTimestamp>2020-11-21T07:48:46.613333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2020-11-21T09:21:47.603333Z</LastSchemaUpdate>
+          <LastProcessed>2020-11-21T07:49:00.28Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="90d5b59a-8398-4102-90d2-64a020f0bad1">
+            <DataSourceViewID>Training DWH</DataSourceViewID>
+            <TableID>dbo_Fact_Orders</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="c16a7f67-c012-4c62-8a14-4c7edcc40024">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="20a1f726-d186-4567-a035-3968e398be17" />
+          </ProactiveCaching>
+          <EstimatedSize>19730</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

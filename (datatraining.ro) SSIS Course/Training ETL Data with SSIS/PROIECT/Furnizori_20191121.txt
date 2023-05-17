@@ -1,0 +1,2 @@
+idfurnizor	denumire	locatie
+9000	Mobexpert	Bucuresti

@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1300
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "Report Project D2", "Report Project D2\Report Project D2.rptproj", "{3188A1FA-E029-4430-A315-91A95F0C0854}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3188A1FA-E029-4430-A315-91A95F0C0854}.Debug|Default.ActiveCfg = Debug
+		{3188A1FA-E029-4430-A315-91A95F0C0854}.Debug|Default.Build.0 = Debug
+		{3188A1FA-E029-4430-A315-91A95F0C0854}.Debug|Default.Deploy.0 = Debug
+		{3188A1FA-E029-4430-A315-91A95F0C0854}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{3188A1FA-E029-4430-A315-91A95F0C0854}.DebugLocal|Default.Build.0 = DebugLocal
+		{3188A1FA-E029-4430-A315-91A95F0C0854}.Release|Default.ActiveCfg = Release
+		{3188A1FA-E029-4430-A315-91A95F0C0854}.Release|Default.Build.0 = Release
+		{3188A1FA-E029-4430-A315-91A95F0C0854}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {45B46818-A017-4AED-8602-7A4F80AF4D57}
+	EndGlobalSection
+EndGlobal

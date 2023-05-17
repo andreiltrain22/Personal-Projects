@@ -1,0 +1,2 @@
+idclient	nume	locatie
+4000	Felicitari	Bucuresti

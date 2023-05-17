@@ -1,0 +1,3 @@
+idprodus	denumire	idfurnizor	stoc	dataachizitie	perioadaexprirare	categorieprodus
+9001	scaun birou	9000	3	2019-11-20		180
+

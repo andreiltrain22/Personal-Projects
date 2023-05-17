@@ -1,0 +1,78 @@
+Product,Category,Sales
+Product BKAZJ,Produce,2565.3500
+Product ICKNK,Condiments,17695.6000
+Product RECZE,Beverages,18554.7000
+Product WEUJZ,Seafood,4199.3400
+Product POXFU,Seafood,5232.7000
+Product HLGZA,Confections,21533.2500
+Product QDOMO,Beverages,149983.1000
+Product OSFNS,Dairy Products,12865.9000
+Product HMLNI,Produce,22463.2000
+Product OFBNT,Produce,26864.3500
+Product ZZZHR,Beverages,25077.8000
+Product KSZOI,Condiments,1813.4000
+Product LUNZZ,Condiments,9683.0500
+Product OVLQI,Grains/Cereals,7807.1500
+Product EZZPR,Confections,4357.0500
+Product EPEIM,Condiments,5800.4000
+Product VKCMF,Grains/Cereals,45118.1000
+Product TBTBL,Confections,9360.5000
+Product PWCJB,Produce,8628.9200
+Product LSOFL,Beverages,13148.8000
+Product LYERX,Seafood,14772.9400
+Product IMEHJ,Condiments,3079.8000
+Product BKGEA,Meat/Poultry,21509.0500
+Product SWNJY,Beverages,6677.0500
+Product QSRXF,Grains/Cereals,3382.6000
+Product KSBRM,Condiments,9423.3000
+Product VJXYN,Meat/Poultry,87734.3500
+Product GEEOO,Dairy Products,25737.9000
+Product LQMGN,Condiments,3518.7500
+Product WVJFP,Condiments,13759.1500
+Product CBRRL,Seafood,6142.2800
+Product JYGFE,Beverages,16791.9500
+Product GMKIJ,Seafood,14540.1500
+Product XYWBZ,Condiments,14605.4500
+Product COAXA,Dairy Products,24304.9000
+Product VAIIV,Condiments,7344.6300
+Product VJZZH,Confections,9633.8000
+Product YHXGE,Seafood,22138.7500
+Product JLUDZ,Grains/Cereals,4839.4500
+Product XWOXC,Dairy Products,16169.3000
+Product MYNXN,Confections,1542.1000
+Product PAFRH,Confections,18745.1700
+Product WUXYK,Confections,49825.3000
+Product AOZBW,Meat/Poultry,8826.5000
+Product YZIXQ,Seafood,19046.2000
+Product AQOKR,Seafood,4739.4500
+Product YYWRT,Meat/Poultry,19509.4500
+Product XLXQF,Beverages,2561.4000
+Product BLCAX,Meat/Poultry,35479.9000
+Product ASTMN,Dairy Products,1712.1000
+Product FPYPN,Confections,9499.3500
+Product LYLNI,Confections,4050.0500
+Product MYMOI,Dairy Products,20874.7000
+Product VJIEO,Condiments,10522.7500
+Product NEVTJ,Beverages,14535.1000
+Product CPHFY,Grains/Cereals,7232.1000
+Product QMVUN,Dairy Products,13899.8500
+Product CKEDC,Seafood,31985.3500
+Product RJVNM,Grains/Cereals,9330.7500
+Product HCQDE,Grains/Cereals,23007.7700
+Product SMIOH,Confections,15231.2500
+Product NUNAW,Dairy Products,9170.1000
+Product XKXDO,Confections,6157.4500
+Product ACRVI,Seafood,6662.9500
+Product UKXRI,Dairy Products,76293.4500
+Product QAQRL,Meat/Poultry,5118.4000
+Product XYZPE,Condiments,16437.1000
+Product BIUDV,Confections,3509.7500
+Product QHFFP,Confections,23635.0600
+Product BWRLG,Beverages,8648.1500
+Product QOGNU,Beverages,4779.7000
+Product WHBYK,Dairy Products,50282.7400
+Product APITJ,Produce,44740.6000
+Product HHYDP,Beverages,14274.6500
+Product EVFFA,Seafood,3046.9000
+Product TOONT,Beverages,11469.5500
+Product TTEEX,Seafood,9096.2000

@@ -1,0 +1,2 @@
+idprodus	denumire	idfurnizor	stoc	dataachizitie	perioadaexprirare	categorieprodus
+9002	Training	9999	3	2019-11-23		120

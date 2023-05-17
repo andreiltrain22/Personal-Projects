@@ -1,0 +1,1685 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/12/2020 11:33:43 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANDEEI-TOSH"
+  DTS:CreatorName="Andeei-TOSH\Andeei"
+  DTS:DTSID="{175C597E-D82F-48D8-9C39-F44EA8232AB6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="1048"
+  DTS:ObjectName="ImportSQLComponents"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{A1AB5B5B-C544-4999-AAF6-E3C081D7BBF8}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Training_SSIS Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A4E5DE95-CBEA-42B5-ADEA-557117E02CB4}"
+      DTS:ObjectName="Training_SSIS Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Training_SSIS;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D204353E-208D-48E3-9F29-3F5AF06EE584}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input].Columns[Concat_Full]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Concat_Full"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[Concat_Full]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Where Concat_Full is null]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Where Concat_Full is null"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[Concat_Full]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(Concat_Full)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Remainder]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Remainder"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Merge Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Merge Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[Concat]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Concat"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[Concat]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[customer]"
+                      cachedDataType="i4"
+                      cachedName="customer"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[customer]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[account]"
+                      cachedDataType="i4"
+                      cachedName="account"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[account]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[role]"
+                      cachedDataType="i4"
+                      cachedName="role"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[role]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[fileDate]"
+                      cachedDataType="i4"
+                      cachedName="fileDate"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[fileDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[Concat]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Concat"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[Concat]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[customer]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[customer]"
+                      name="customer">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[customer]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[account]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[account]"
+                      name="account">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[account]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[role]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[role]"
+                      name="role">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[role]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[fileDate]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[fileDate]"
+                      name="fileDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[fileDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[Concat]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[Concat]"
+                      name="Concat"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input].Columns[Concat]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[Concat_Full]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[Concat_Full]"
+                      name="Concat_Full">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input].Columns[Concat]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Relcif Full"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Relcif Full"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[relciffull]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Relcif Full.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Training_SSIS Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Training_SSIS Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[customer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].ExternalColumns[customer]"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[customer]"
+                      name="customer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[account]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].ExternalColumns[account]"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[account]"
+                      name="account"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[role]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].ExternalColumns[role]"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[role]"
+                      name="role"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[fileDate]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].ExternalColumns[fileDate]"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[fileDate]"
+                      name="fileDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].ExternalColumns[customer]"
+                      dataType="i4"
+                      name="customer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].ExternalColumns[account]"
+                      dataType="i4"
+                      name="account" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].ExternalColumns[role]"
+                      dataType="i4"
+                      name="role" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].ExternalColumns[fileDate]"
+                      dataType="i4"
+                      name="fileDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[customer]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[customer]"
+                      name="customer" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[account]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[account]"
+                      name="account" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[role]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[role]"
+                      name="role" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[fileDate]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[fileDate]"
+                      name="fileDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Relcif Full Concat Fields"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Relcif Full Concat Fields"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Relcif Full Concat Fields.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Full Concat Fields.Inputs[Derived Column Input].Columns[customer]"
+                      cachedDataType="i4"
+                      cachedName="customer"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[customer]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Full Concat Fields.Inputs[Derived Column Input].Columns[account]"
+                      cachedDataType="i4"
+                      cachedName="account"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[account]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Full Concat Fields.Inputs[Derived Column Input].Columns[role]"
+                      cachedDataType="i4"
+                      cachedName="role"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[role]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Full Concat Fields.Inputs[Derived Column Input].Columns[fileDate]"
+                      cachedDataType="i4"
+                      cachedName="fileDate"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[fileDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Relcif Full Concat Fields.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Output].Columns[Concat]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="80"
+                      lineageId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Output].Columns[Concat]"
+                      name="Concat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,20,1250)(#{Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[customer]}) + (DT_STR,20,1250)(#{Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[account]}) + (DT_STR,20,1250)(#{Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[role]}) + (DT_STR,20,1250)(#{Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[fileDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1250)(customer) + (DT_STR,20,1250)(account) + (DT_STR,20,1250)(role) + (DT_STR,20,1250)(fileDate)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Relcif Full Concat Fields.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Relcif Full Dest"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Relcif Full Dest"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[relciffull]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Relcif Full Dest.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Training_SSIS Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Training_SSIS Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].Columns[customer]"
+                      cachedDataType="i4"
+                      cachedName="customer"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].ExternalColumns[customer]"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[customer]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].Columns[account]"
+                      cachedDataType="i4"
+                      cachedName="account"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].ExternalColumns[account]"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[account]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].Columns[role]"
+                      cachedDataType="i4"
+                      cachedName="role"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].ExternalColumns[role]"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[role]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].Columns[fileDate]"
+                      cachedDataType="i4"
+                      cachedName="fileDate"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].ExternalColumns[fileDate]"
+                      lineageId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output].Columns[fileDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].ExternalColumns[customer]"
+                      dataType="i4"
+                      name="customer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].ExternalColumns[account]"
+                      dataType="i4"
+                      name="account" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].ExternalColumns[role]"
+                      dataType="i4"
+                      name="role" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input].ExternalColumns[fileDate]"
+                      dataType="i4"
+                      name="fileDate" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Relcif Full Dest.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full Dest.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Full Dest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Full Dest.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Relcif Imported"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Relcif Imported"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[relcifimported]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Relcif Imported.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Training_SSIS Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Training_SSIS Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[customer]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].ExternalColumns[customer]"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[customer]"
+                      name="customer"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[account]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].ExternalColumns[account]"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[account]"
+                      name="account"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[role]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].ExternalColumns[role]"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[role]"
+                      name="role"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[fileDate]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].ExternalColumns[fileDate]"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[fileDate]"
+                      name="fileDate"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].ExternalColumns[customer]"
+                      dataType="i4"
+                      name="customer" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].ExternalColumns[account]"
+                      dataType="i4"
+                      name="account" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].ExternalColumns[role]"
+                      dataType="i4"
+                      name="role" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].ExternalColumns[fileDate]"
+                      dataType="i4"
+                      name="fileDate" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[customer]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[customer]"
+                      name="customer" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[account]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[account]"
+                      name="account" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[role]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[role]"
+                      name="role" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[fileDate]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[fileDate]"
+                      name="fileDate" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Relcif Imported Concat Fields"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Relcif Imported Concat Fields"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Relcif Imported Concat Fields.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Imported Concat Fields.Inputs[Derived Column Input].Columns[customer]"
+                      cachedDataType="i4"
+                      cachedName="customer"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[customer]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Imported Concat Fields.Inputs[Derived Column Input].Columns[account]"
+                      cachedDataType="i4"
+                      cachedName="account"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[account]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Imported Concat Fields.Inputs[Derived Column Input].Columns[role]"
+                      cachedDataType="i4"
+                      cachedName="role"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[role]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Relcif Imported Concat Fields.Inputs[Derived Column Input].Columns[fileDate]"
+                      cachedDataType="i4"
+                      cachedName="fileDate"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[fileDate]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Data Flow Task\Relcif Imported Concat Fields.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Output].Columns[Concat]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="80"
+                      lineageId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Output].Columns[Concat]"
+                      name="Concat"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,20,1250)(#{Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[customer]}) + (DT_STR,20,1250)(#{Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[account]}) + (DT_STR,20,1250)(#{Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[role]}) + (DT_STR,20,1250)(#{Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[fileDate]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,20,1250)(customer) + (DT_STR,20,1250)(account) + (DT_STR,20,1250)(role) + (DT_STR,20,1250)(fileDate)</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Data Flow Task\Relcif Imported Concat Fields.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sort Relcif Full by Concat"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Relcif Full by Concat"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sort Relcif Full by Concat.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Inputs[Sort Input].Columns[customer]"
+                      cachedDataType="i4"
+                      cachedName="customer"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[customer]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Inputs[Sort Input].Columns[account]"
+                      cachedDataType="i4"
+                      cachedName="account"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[account]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Inputs[Sort Input].Columns[role]"
+                      cachedDataType="i4"
+                      cachedName="role"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[role]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Inputs[Sort Input].Columns[fileDate]"
+                      cachedDataType="i4"
+                      cachedName="fileDate"
+                      lineageId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[fileDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Inputs[Sort Input].Columns[Concat]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Concat"
+                      lineageId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Output].Columns[Concat]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[customer]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[customer]"
+                      name="customer">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[customer]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[account]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[account]"
+                      name="account">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[account]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[role]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[role]"
+                      name="role">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[role]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[fileDate]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[fileDate]"
+                      name="fileDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output].Columns[fileDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[Concat]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output].Columns[Concat]"
+                      name="Concat"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Output].Columns[Concat]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Sort Relcif Imported by Concat"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Relcif Imported by Concat"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Inputs[Sort Input].Columns[customer]"
+                      cachedDataType="i4"
+                      cachedName="customer"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[customer]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Inputs[Sort Input].Columns[account]"
+                      cachedDataType="i4"
+                      cachedName="account"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[account]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Inputs[Sort Input].Columns[role]"
+                      cachedDataType="i4"
+                      cachedName="role"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[role]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Inputs[Sort Input].Columns[fileDate]"
+                      cachedDataType="i4"
+                      cachedName="fileDate"
+                      lineageId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[fileDate]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Inputs[Sort Input].Columns[Concat]"
+                      cachedDataType="wstr"
+                      cachedLength="80"
+                      cachedName="Concat"
+                      lineageId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Output].Columns[Concat]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[customer]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[customer]"
+                      name="customer">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[customer]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[account]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[account]"
+                      name="account">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[account]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[role]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[role]"
+                      name="role">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[role]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[fileDate]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[fileDate]"
+                      name="fileDate">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output].Columns[fileDate]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[Concat]"
+                      dataType="wstr"
+                      length="80"
+                      lineageId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output].Columns[Concat]"
+                      name="Concat"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Output].Columns[Concat]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output]"
+              endId="Package\Data Flow Task\Sort Relcif Imported by Concat.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Relcif Imported Concat Fields.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Derived Column Output1]"
+              endId="Package\Data Flow Task\Sort Relcif Full by Concat.Inputs[Sort Input]"
+              name="Derived Column Output"
+              startId="Package\Data Flow Task\Relcif Full Concat Fields.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Merge Join Output]"
+              endId="Package\Data Flow Task\Conditional Split.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\Data Flow Task\Merge Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Relcif Imported Concat Fields.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Relcif Imported.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+              endId="Package\Data Flow Task\Relcif Full Concat Fields.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\Relcif Full.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output]"
+              endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort Relcif Imported by Concat.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Sort Output1]"
+              endId="Package\Data Flow Task\Merge Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Data Flow Task\Sort Relcif Full by Concat.Outputs[Sort Output]" />
+            <path
+              refId="Package\Data Flow Task.Paths[Where Concat_Full is null]"
+              endId="Package\Data Flow Task\Relcif Full Dest.Inputs[OLE DB Destination Input]"
+              name="Where Concat_Full is null"
+              startId="Package\Data Flow Task\Conditional Split.Outputs[Where Concat_Full is null]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task"
+          TopLeft="135,54" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Data Flow Task\Relcif Imported"
+          TopLeft="161.5,25.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Data Flow Task\Relcif Full"
+          TopLeft="420.5,29.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Data Flow Task\Relcif Full Dest"
+          TopLeft="297,403" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Data Flow Task\Relcif Imported Concat Fields"
+          TopLeft="133.5,97.5" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="240.5,67.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="192,42"
+          Id="Package\Data Flow Task\Relcif Full Concat Fields"
+          TopLeft="402.5,101" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output1]"
+          TopLeft="495.75,71.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.5"
+              Start="0,0"
+              End="0,22">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Data Flow Task\Sort Relcif Imported by Concat"
+          TopLeft="130,170" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output]"
+          TopLeft="243,139.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.5"
+              Start="0,0"
+              End="0,23">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Data Flow Task\Sort Relcif Full by Concat"
+          TopLeft="398,172" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Derived Column Output1]"
+          TopLeft="498,143">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Data Flow Task\Merge Join"
+          TopLeft="303,241" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output]"
+          TopLeft="243,212">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126,29"
+              Start="0,0"
+              End="126,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
+                  <mssgle:LineSegment
+                    End="122,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122,14.5"
+                    Point2="126,14.5"
+                    Point3="126,18.5" />
+                  <mssgle:LineSegment
+                    End="126,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Sort Output1]"
+          TopLeft="497.5,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-107.833333333333,27"
+              Start="0,0"
+              End="-107.833333333333,19.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.0059880239521" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.0059880239521"
+                    Point2="0,16.0059880239521"
+                    Point3="-4,16.0059880239521" />
+                  <mssgle:LineSegment
+                    End="-103.833333333333,16.0059880239521" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-103.833333333333,16.0059880239521"
+                    Point2="-107.833333333333,16.0059880239521"
+                    Point3="-107.833333333333,20.0059880239521" />
+                  <mssgle:LineSegment
+                    End="-107.833333333333,19.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="157,42"
+          Id="Package\Data Flow Task\Conditional Split"
+          TopLeft="288,314" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Merge Join Output]"
+          TopLeft="367.75,283">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[Where Concat_Full is null]"
+          TopLeft="369.5,356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47"
+              Start="0,0"
+              End="0,39.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-56.4173046875,14.21875,112.834609375,11.0625"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Relcif Imported">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Relcif Full">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Relcif Full Dest">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,131 @@
+﻿<DeploymentSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0">
+  <Target>
+    <Database>SSAS_Prj2</Database>
+    <Server>localhost</Server>
+    <ConnectionString>Data Source=localhost;Timeout=0</ConnectionString>
+  </Target>
+  <Options>
+    <TransactionalDeployment>false</TransactionalDeployment>
+    <PartitionDeployment>DeployPartitions</PartitionDeployment>
+    <RoleDeployment>DeployRolesRetainMembers</RoleDeployment>
+    <ProcessingOption>DoNotProcess</ProcessingOption>
+    <OutputScript></OutputScript>
+    <ImpactAnalysisFile></ImpactAnalysisFile>
+    <ConfigurationSettingsDeployment>Deploy</ConfigurationSettingsDeployment>
+    <OptimizationSettingsDeployment>Deploy</OptimizationSettingsDeployment>
+    <WriteBackTableCreation>UseExisting</WriteBackTableCreation>
+  </Options>
+  <Snapshot>
+    <ObjectSnapshots>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>6oxJhfVhuC8Sucidp+iZp8WEyC0=21.11.2020 09:27:5821.11.2020 09:27:58</TimeStamp>
+        <ID>
+          <String>Training DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.RelationalDataSource</Type>
+        <TimeStamp>My2luNecKFiKm9RZN1M9up/MABk=21.11.2020 11:08:3621.11.2020 11:08:36</TimeStamp>
+        <ID>
+          <String>Vanzari Curs DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>r5ZSLKrHu7AwZFGTyCzXt8rpNMc=21.11.2020 09:29:3021.11.2020 09:29:29</TimeStamp>
+        <ID>
+          <String>Training DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.DataSourceView</Type>
+        <TimeStamp>QbVnqPZ3rRKfQpoWLNhsIlyy4c8=21.11.2020 11:09:5721.11.2020 11:09:57</TimeStamp>
+        <ID>
+          <String>Vanzari Curs DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>WExZfCb8XGCcjSuWDo6qSrM7HNA=21.11.2020 09:32:2021.11.2020 09:32:19</TimeStamp>
+        <ID>
+          <String>Dim Shippers</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MGW7avcsh0jLhEYOtWkOg/j/n+Q=21.11.2020 09:32:2021.11.2020 09:32:19</TimeStamp>
+        <ID>
+          <String>Dim Products</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>MaZgsdZIkg6ROUjCevNmj2LMzQg=21.11.2020 09:32:2021.11.2020 09:32:19</TimeStamp>
+        <ID>
+          <String>Dim Customers</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>mYNJDnSbQpX68nPRLrSu/kXoPy4=21.11.2020 09:32:2021.11.2020 09:32:20</TimeStamp>
+        <ID>
+          <String>Dim Date</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>Rj1IunF9b3hM4AXc1OwMpcia+Ec=21.11.2020 11:12:1021.11.2020 11:12:10</TimeStamp>
+        <ID>
+          <String>Dim Date 1</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>QalsYQ29XAVdfUqT/eC/+xbYjPY=21.11.2020 11:12:1021.11.2020 11:12:10</TimeStamp>
+        <ID>
+          <String>Dim Produse</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>9FkKJy/nDdr6B64N95Z5tMjE+CM=21.11.2020 11:12:1021.11.2020 11:12:10</TimeStamp>
+        <ID>
+          <String>Dim Clienti</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Dimension</Type>
+        <TimeStamp>j/DUHJ4EfS6hIVsqUkIXuGggzKI=21.11.2020 11:12:1021.11.2020 11:12:10</TimeStamp>
+        <ID>
+          <String>Dim Furnizori</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>mRpoFwdJqGr81WXBh/nmU3OxRwE=22.11.2020 09:28:4721.11.2020 09:32:19PcUhKruIzA7N9Zxie/s/64kX45I=22.11.2020 09:28:4721.11.2020 09:32:19</TimeStamp>
+        <ID>
+          <String>Training DWH</String>
+        </ID>
+      </ObjectSnapshot>
+      <ObjectSnapshot>
+        <Type>Microsoft.AnalysisServices.Cube</Type>
+        <TimeStamp>Vh0iCdYDKyk+mZJTK0BwDOpTVCg=21.11.2020 11:12:1021.11.2020 11:12:10xEtN4BDycXBZpTid9+MI4teKtt8=21.11.2020 11:12:1021.11.2020 11:12:10</TimeStamp>
+        <ID>
+          <String>Vanzari Curs DWH</String>
+        </ID>
+      </ObjectSnapshot>
+    </ObjectSnapshots>
+    <DatabaseSnapshot>
+      <Type>Microsoft.AnalysisServices.Database</Type>
+      <TimeStamp>p56VCGK5dybjX/ZKYDJl10Z21z0=21.11.2020 09:23:1321.11.2020 09:23:12</TimeStamp>
+      <ID>
+        <String>SSAS_Prj2</String>
+      </ID>
+    </DatabaseSnapshot>
+    <Granularity>Coarse</Granularity>
+  </Snapshot>
+  <AssemblyLocations />
+  <ProcessingComplete>true</ProcessingComplete>
+  <LastDeployed>2020-11-22T07:28:53.946667Z</LastDeployed>
+</DeploymentSnapshot>

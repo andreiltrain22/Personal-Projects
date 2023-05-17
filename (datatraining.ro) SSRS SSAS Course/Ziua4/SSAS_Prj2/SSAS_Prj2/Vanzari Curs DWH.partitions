@@ -1,0 +1,33 @@
+﻿<Cube xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns:dwd="http://schemas.microsoft.com/DataWarehouse/Designer/1.0" dwd:design-time-name="a68d5082-86e4-4e2b-af06-da9ec8014a04" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Vanzari Curs DWH</ID>
+  <MeasureGroups>
+    <MeasureGroup>
+      <ID>Fact Facturi</ID>
+      <Partitions>
+        <Partition dwd:design-time-name="94bf198b-1452-4783-9d88-45d30f1cede6">
+          <ID>Fact Facturi</ID>
+          <Name>Fact Facturi</Name>
+          <CreatedTimestamp>2020-11-21T09:21:47.643333Z</CreatedTimestamp>
+          <LastSchemaUpdate>2020-11-21T09:21:47.643333Z</LastSchemaUpdate>
+          <LastProcessed>2020-11-21T09:29:00.59Z</LastProcessed>
+          <State>Processed</State>
+          <Source xsi:type="DsvTableBinding" dwd:design-time-name="4e91dcf0-32d1-47ba-90f6-669ffce14215">
+            <DataSourceViewID>Vanzari Curs DWH</DataSourceViewID>
+            <TableID>dbo_FactFacturi</TableID>
+          </Source>
+          <StorageMode>Molap</StorageMode>
+          <CurrentStorageMode>Molap</CurrentStorageMode>
+          <ProcessingMode>Regular</ProcessingMode>
+          <ProactiveCaching dwd:design-time-name="919cfdf2-c122-430c-9ee3-2f60e9b22c56">
+            <SilenceInterval>-PT1S</SilenceInterval>
+            <Latency>-PT1S</Latency>
+            <SilenceOverrideInterval>-PT1S</SilenceOverrideInterval>
+            <ForceRebuildInterval>-PT1S</ForceRebuildInterval>
+            <Source xsi:type="ProactiveCachingInheritedBinding" dwd:design-time-name="1d0b06e5-58e0-4896-ace3-d146b2e94fc3" />
+          </ProactiveCaching>
+          <EstimatedSize>463</EstimatedSize>
+        </Partition>
+      </Partitions>
+    </MeasureGroup>
+  </MeasureGroups>
+</Cube>

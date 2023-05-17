@@ -1,0 +1,3402 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/19/2020 10:27:50 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ANDEEI-TOSH"
+  DTS:CreatorName="Andeei-TOSH\Andeei"
+  DTS:DTSID="{CF98A541-C9C9-4D43-B80F-FB6EB441985A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="1048"
+  DTS:ObjectName="TestPrj"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{2A484B1A-2974-41C9-9A3E-7A94D0A0A210}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - Articole]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{F072CAD2-8D3E-480E-BA81-5BC5FC466E65}"
+      DTS:ObjectName="Flat File Connection - Articole">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Test ETL Data with SSIS\Articole.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="productid"
+              DTS:DTSID="{860CB815-9C9F-4C40-8935-7D91E343D6A1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="productname"
+              DTS:DTSID="{47F981D9-6F00-4E8D-AA8D-FB821162F286}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="supplierid"
+              DTS:DTSID="{09D80A8C-F2BE-4A6E-A90B-D7384985CE94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="categoryid"
+              DTS:DTSID="{11CB609B-7226-4B52-9B52-FD0BCD26E1A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="unitprice"
+              DTS:DTSID="{92E259B0-722F-4CBE-B7A9-E901B0B8C09F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="11"
+              DTS:TextQualified="True"
+              DTS:ObjectName="discontinued"
+              DTS:DTSID="{FD2BC0E2-5E06-4544-9424-6B3BCCF08ACD}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - Comenzi]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{090E84D8-FF03-4F5B-A70A-325BC77AA95C}"
+      DTS:ObjectName="Flat File Connection - Comenzi">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Test ETL Data with SSIS\Comenzi.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="orderid"
+              DTS:DTSID="{C00E268E-684D-4624-92AB-F1F2645C045C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="productid"
+              DTS:DTSID="{29545362-2501-4E64-BA8C-2284D7D68A05}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="unitprice"
+              DTS:DTSID="{258E0D3D-44C9-40CE-A6C5-93F2D47AE88C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="qty"
+              DTS:DTSID="{B437C408-4A8B-411F-90F1-EDCBC7FB466E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="discount"
+              DTS:DTSID="{FEF69C47-CB01-45BA-B4AC-9E829E9C13BE}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection - Report]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C7473E10-8164-4E52-B887-0E7638D448B5}"
+      DTS:ObjectName="Flat File Connection - Report">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@FilePath</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1048"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1250"
+          DTS:ConnectionString="E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\ETL Data with SSIS - files\Reports\Raport_Comenzi_20200720.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="40"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ProductName"
+              DTS:DTSID="{FE57F6A5-4371-4826-A4EB-44E58884AC94}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sales"
+              DTS:DTSID="{85721571-6BEA-43B2-BBAC-13174D8928A1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Vanzari Connection]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{1A3DB540-97F4-47AA-AABF-63B8C7EE30CC}"
+      DTS:ObjectName="Vanzari Connection">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=.;Initial Catalog=Vanzari;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0D9594AC-0DEB-4805-8072-C19D327BEAC3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR, 4) YEAR(getdate()) + &#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) MONTH(getdate()), 2) + &#xA;RIGHT(&quot;0&quot; + (DT_WSTR, 2) DAY(getdate()), 2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileDate">
+      <DTS:VariableValue
+        DTS:DataType="8">20200720</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{721C3E86-0D9D-42D1-9990-37C7C4597F26}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;E:\\SSIS\\Curs SSIS_DataTraining\\Training ETL Data with SSIS\\ETL Data with SSIS - files\\Reports\\Raport_Comenzi_&quot; + @FileDate + &quot;.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">E:\SSIS\Curs SSIS_DataTraining\Training ETL Data with SSIS\ETL Data with SSIS - files\Reports\Raport_Comenzi_20200720.txt</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Export Report"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5308E224-D165-4C5E-982B-7603C066B869}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Export Report"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Export Report\Derive Sales"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derive Sales"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Export Report\Derive Sales.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Report\Derive Sales.Inputs[Derived Column Input].Columns[Unitprice]"
+                      cachedDataType="numeric"
+                      cachedName="Unitprice"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Unitprice]" />
+                    <inputColumn
+                      refId="Package\Export Report\Derive Sales.Inputs[Derived Column Input].Columns[Qty]"
+                      cachedDataType="i4"
+                      cachedName="Qty"
+                      lineageId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Qty]" />
+                    <inputColumn
+                      refId="Package\Export Report\Derive Sales.Inputs[Derived Column Input].Columns[Discount]"
+                      cachedDataType="numeric"
+                      cachedName="Discount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Export Report\Derive Sales.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Export Report\Derive Sales.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Derive Sales.Outputs[Derived Column Output].Columns[Sales]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Export Report\Derive Sales.Outputs[Derived Column Output].Columns[Sales]"
+                      name="Sales"
+                      precision="38"
+                      scale="4"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(1 - #{Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Discount]}) * #{Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Unitprice]} * #{Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Qty]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(1 - Discount) * Unitprice * Qty</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Export Report\Derive Sales.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Export Report\Derive Sales.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Derive Sales.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Derive Sales.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Export Report\Derive Sales.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Derive Sales.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export Report\Export 2 Report"
+              componentClassID="Microsoft.FlatFileDestination"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Destination"
+              localeId="1048"
+              name="Export 2 Report"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+                <property
+                  dataType="System.Boolean"
+                  description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                  name="EscapeQualifier">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Report\Export 2 Report.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection - Report]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Report]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Export Report\Export 2 Report.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Report\Export 2 Report.Inputs[Flat File Destination Input].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      externalMetadataColumnId="Package\Export Report\Export 2 Report.Inputs[Flat File Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Export Report\Sum Sales.Outputs[Aggregate Output 1].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Export Report\Export 2 Report.Inputs[Flat File Destination Input].Columns[Sales]"
+                      cachedDataType="numeric"
+                      cachedName="Sales"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      externalMetadataColumnId="Package\Export Report\Export 2 Report.Inputs[Flat File Destination Input].ExternalColumns[Sales]"
+                      lineageId="Package\Export Report\Sum Sales.Outputs[Aggregate Output 1].Columns[Sales]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Export 2 Report.Inputs[Flat File Destination Input].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Export 2 Report.Inputs[Flat File Destination Input].ExternalColumns[Sales]"
+                      dataType="numeric"
+                      name="Sales"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Export Report\Import Articole"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Import Articole"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Articole]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Report\Import Articole.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vanzari Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vanzari Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[ProductId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[ProductId]"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[ProductId]"
+                      name="ProductId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      length="40"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[ProductName]"
+                      name="ProductName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[SupplierId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[SupplierId]"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[SupplierId]"
+                      name="SupplierId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[CategoryId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[CategoryId]"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[CategoryId]"
+                      name="CategoryId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[Unitprice]"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[Discontinued]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[Discontinued]"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[Discontinued]"
+                      name="Discontinued"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[ProductId]"
+                      dataType="i4"
+                      name="ProductId" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[SupplierId]"
+                      dataType="i4"
+                      name="SupplierId" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[CategoryId]"
+                      dataType="i4"
+                      name="CategoryId" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[Unitprice]"
+                      dataType="numeric"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].ExternalColumns[Discontinued]"
+                      dataType="bool"
+                      name="Discontinued" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[ProductId]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[ProductId]"
+                      name="ProductId" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[ProductName]"
+                      name="ProductName" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[SupplierId]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[SupplierId]"
+                      name="SupplierId" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[CategoryId]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[CategoryId]"
+                      name="CategoryId" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[Discontinued]"
+                      dataType="bool"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[Discontinued]"
+                      name="Discontinued" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export Report\Import Comenzi"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Import Comenzi"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Comenzi]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Export Report\Import Comenzi.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vanzari Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vanzari Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Orderid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[Orderid]"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Orderid]"
+                      name="Orderid"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[ProductId]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[ProductId]"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[ProductId]"
+                      name="ProductId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[Unitprice]"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Qty]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[Qty]"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Qty]"
+                      name="Qty"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Discount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Discount]"
+                      name="Discount"
+                      precision="18"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[Orderid]"
+                      dataType="i4"
+                      name="Orderid" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[ProductId]"
+                      dataType="i4"
+                      name="ProductId" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[Unitprice]"
+                      dataType="numeric"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[Qty]"
+                      dataType="i4"
+                      name="Qty" />
+                    <externalMetadataColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].ExternalColumns[Discount]"
+                      dataType="numeric"
+                      name="Discount"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[Orderid]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[Orderid]"
+                      name="Orderid" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[ProductId]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[ProductId]"
+                      name="ProductId" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[Qty]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[Qty]"
+                      name="Qty" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[Discount]"
+                      name="Discount"
+                      precision="18"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export Report\Inner Join"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Inner Join"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Export Report\Inner Join.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Report\Inner Join.Inputs[Merge Join Left Input].Columns[ProductId]"
+                      cachedDataType="i4"
+                      cachedName="ProductId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[ProductId]" />
+                    <inputColumn
+                      refId="Package\Export Report\Inner Join.Inputs[Merge Join Left Input].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      lineageId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[ProductName]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Export Report\Inner Join.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Report\Inner Join.Inputs[Merge Join Right Input].Columns[ProductId]"
+                      cachedDataType="i4"
+                      cachedName="ProductId"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[ProductId]" />
+                    <inputColumn
+                      refId="Package\Export Report\Inner Join.Inputs[Merge Join Right Input].Columns[Unitprice]"
+                      cachedDataType="numeric"
+                      cachedName="Unitprice"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Unitprice]" />
+                    <inputColumn
+                      refId="Package\Export Report\Inner Join.Inputs[Merge Join Right Input].Columns[Qty]"
+                      cachedDataType="i4"
+                      cachedName="Qty"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Qty]" />
+                    <inputColumn
+                      refId="Package\Export Report\Inner Join.Inputs[Merge Join Right Input].Columns[Discount]"
+                      cachedDataType="numeric"
+                      cachedName="Discount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Export Report\Inner Join.Outputs[Merge Join Output]"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[ProductName]"
+                      name="ProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Export Report\Inner Join.Inputs[Merge Join Left Input].Columns[ProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Export Report\Inner Join.Inputs[Merge Join Right Input].Columns[Unitprice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Qty]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Qty]"
+                      name="Qty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Export Report\Inner Join.Inputs[Merge Join Right Input].Columns[Qty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Discount]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[Discount]"
+                      name="Discount"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\Export Report\Inner Join.Inputs[Merge Join Right Input].Columns[Discount]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export Report\Sort Articole by Prod ID"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Articole by Prod ID"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Export Report\Sort Articole by Prod ID.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Inputs[Sort Input].Columns[ProductId]"
+                      cachedDataType="i4"
+                      cachedName="ProductId"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[ProductId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Inputs[Sort Input].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[ProductName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Inputs[Sort Input].Columns[SupplierId]"
+                      cachedDataType="i4"
+                      cachedName="SupplierId"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[SupplierId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Inputs[Sort Input].Columns[CategoryId]"
+                      cachedDataType="i4"
+                      cachedName="CategoryId"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[CategoryId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Inputs[Sort Input].Columns[Unitprice]"
+                      cachedDataType="numeric"
+                      cachedName="Unitprice"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[Unitprice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Inputs[Sort Input].Columns[Discontinued]"
+                      cachedDataType="bool"
+                      cachedName="Discontinued"
+                      lineageId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[Discontinued]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[ProductId]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[ProductId]"
+                      name="ProductId"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[ProductId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[ProductName]"
+                      name="ProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[ProductName]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[SupplierId]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[SupplierId]"
+                      name="SupplierId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[SupplierId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[CategoryId]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[CategoryId]"
+                      name="CategoryId">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[CategoryId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[Unitprice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[Discontinued]"
+                      dataType="bool"
+                      lineageId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output].Columns[Discontinued]"
+                      name="Discontinued">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Articole.Outputs[OLE DB Source Output].Columns[Discontinued]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export Report\Sort Comenzi by Prod ID"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Sort;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Sorts input data in ascending or descending order when it cannot be sorted at its source. For example, sort sales data by 'customer id' before it is written to a flat file and delivered to another department. Note: We do not recommend this transformation for large data flows."
+              name="Sort Comenzi by Prod ID"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the Sort transformation removes rows with duplicate sort values."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the maximum number of threads to use for sorting."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Export Report\Sort Comenzi by Prod ID.Inputs[Sort Input]"
+                  name="Sort Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Inputs[Sort Input].Columns[Orderid]"
+                      cachedDataType="i4"
+                      cachedName="Orderid"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Orderid]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Inputs[Sort Input].Columns[ProductId]"
+                      cachedDataType="i4"
+                      cachedName="ProductId"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[ProductId]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Inputs[Sort Input].Columns[Unitprice]"
+                      cachedDataType="numeric"
+                      cachedName="Unitprice"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Unitprice]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Inputs[Sort Input].Columns[Qty]"
+                      cachedDataType="i4"
+                      cachedName="Qty"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Qty]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Inputs[Sort Input].Columns[Discount]"
+                      cachedDataType="numeric"
+                      cachedName="Discount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      lineageId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Discount]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the comparison options for character data."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the sort order of the column."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output]"
+                  isSorted="true"
+                  name="Sort Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Orderid]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Orderid]"
+                      name="Orderid">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Orderid]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[ProductId]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[ProductId]"
+                      name="ProductId"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[ProductId]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Unitprice]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Unitprice]"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Unitprice]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Qty]"
+                      dataType="i4"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Qty]"
+                      name="Qty">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Qty]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Discount]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output].Columns[Discount]"
+                      name="Discount"
+                      precision="18"
+                      scale="2">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the lineage identifier of the input column that is associated with this output column."
+                          name="SortColumnId">#{Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output].Columns[Discount]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Export Report\Sum Sales"
+              componentClassID="Microsoft.Aggregate"
+              contactInfo="Aggregate;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Aggregates data with functions such as Average, Sum, Count, Max, and Min. For example, group data to compute the sum of sales per product or the average visits per day."
+              name="Sum Sales"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                  name="KeyScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                  name="Keys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the approximate number of distinct values in a column that the aggregation counts distinctly. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no CountDistinctScale value is used."
+                  name="CountDistinctScale"
+                  typeConverter="KeyScaleType">0</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the exact number of distinct values in a column that the aggregation counts distinctly. If a CountDistinctScale value is specified, the value in CountDistinctKeys takes precedence."
+                  name="CountDistinctKeys" />
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage by which memory can be extended during the aggregation. Valid values are between 1 and 100."
+                  name="AutoExtendFactor">25</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Export Report\Sum Sales.Inputs[Aggregate Input 1]"
+                  name="Aggregate Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Export Report\Sum Sales.Inputs[Aggregate Input 1].Columns[ProductName]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="ProductName"
+                      lineageId="Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[ProductName]" />
+                    <inputColumn
+                      refId="Package\Export Report\Sum Sales.Inputs[Aggregate Input 1].Columns[Sales]"
+                      cachedDataType="numeric"
+                      cachedName="Sales"
+                      cachedPrecision="38"
+                      cachedScale="4"
+                      lineageId="Package\Export Report\Derive Sales.Outputs[Derived Column Output].Columns[Sales]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Export Report\Sum Sales.Outputs[Aggregate Output 1]"
+                  name="Aggregate Output 1">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the approximate number of group by keys that the aggregation produces. Low indicates 500,000 key values, Medium indicates 5 million key values, and High indicates more than 25 million key values. Unspecified indicates no KeyScale value is used."
+                      name="KeyScale"
+                      typeConverter="KeyScaleType">0</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the exact number of group by keys that the aggregation produces. If a KeyScale value is specified, the value in Keys takes precedence."
+                      name="Keys" />
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Export Report\Sum Sales.Outputs[Aggregate Output 1].Columns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      lineageId="Package\Export Report\Sum Sales.Outputs[Aggregate Output 1].Columns[ProductName]"
+                      name="ProductName">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Export Report\Inner Join.Outputs[Merge Join Output].Columns[ProductName]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Export Report\Sum Sales.Outputs[Aggregate Output 1].Columns[Sales]"
+                      dataType="numeric"
+                      lineageId="Package\Export Report\Sum Sales.Outputs[Aggregate Output 1].Columns[Sales]"
+                      name="Sales"
+                      precision="38"
+                      scale="4">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the ID of the input column used in the aggregation."
+                          name="AggregationColumnId">#{Package\Export Report\Derive Sales.Outputs[Derived Column Output].Columns[Sales]}</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the type of aggregation."
+                          name="AggregationType"
+                          typeConverter="AggregationType">4</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Indicates whether the column requires special handling because it may contain oversized data or it requires precision beyond a float data type."
+                          name="IsBig">1</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the string comparison options."
+                          name="AggregationComparisonFlags">0</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Export Report.Paths[Aggregate Output 1]"
+              endId="Package\Export Report\Export 2 Report.Inputs[Flat File Destination Input]"
+              name="Aggregate Output 1"
+              startId="Package\Export Report\Sum Sales.Outputs[Aggregate Output 1]" />
+            <path
+              refId="Package\Export Report.Paths[Derived Column Output]"
+              endId="Package\Export Report\Sum Sales.Inputs[Aggregate Input 1]"
+              name="Derived Column Output"
+              startId="Package\Export Report\Derive Sales.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Export Report.Paths[Merge Join Output]"
+              endId="Package\Export Report\Derive Sales.Inputs[Derived Column Input]"
+              name="Merge Join Output"
+              startId="Package\Export Report\Inner Join.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\Export Report.Paths[OLE DB Source Output]"
+              endId="Package\Export Report\Sort Articole by Prod ID.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Export Report\Import Articole.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Export Report.Paths[OLE DB Source Output1]"
+              endId="Package\Export Report\Sort Comenzi by Prod ID.Inputs[Sort Input]"
+              name="OLE DB Source Output"
+              startId="Package\Export Report\Import Comenzi.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Export Report.Paths[Sort Output]"
+              endId="Package\Export Report\Inner Join.Inputs[Merge Join Left Input]"
+              name="Sort Output"
+              startId="Package\Export Report\Sort Articole by Prod ID.Outputs[Sort Output]" />
+            <path
+              refId="Package\Export Report.Paths[Sort Output1]"
+              endId="Package\Export Report\Inner Join.Inputs[Merge Join Right Input]"
+              name="Sort Output"
+              startId="Package\Export Report\Sort Comenzi by Prod ID.Outputs[Sort Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Articole"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DC97E3F3-BC0D-4676-8E05-03AE10CE5DA9}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Articole"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Articole\Export to Articole"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Export to Articole"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Articole]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Articole\Export to Articole.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vanzari Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vanzari Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].Columns[productid]"
+                      cachedDataType="i4"
+                      cachedName="productid"
+                      externalMetadataColumnId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[productid]" />
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].Columns[productname]"
+                      cachedDataType="wstr"
+                      cachedLength="40"
+                      cachedName="productname"
+                      externalMetadataColumnId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[productname]" />
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].Columns[supplierid]"
+                      cachedDataType="i4"
+                      cachedName="supplierid"
+                      externalMetadataColumnId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[SupplierId]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[supplierid]" />
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].Columns[categoryid]"
+                      cachedDataType="i4"
+                      cachedName="categoryid"
+                      externalMetadataColumnId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[CategoryId]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[categoryid]" />
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].Columns[unitprice]"
+                      cachedDataType="cy"
+                      cachedName="unitprice"
+                      externalMetadataColumnId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[Unitprice]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[unitprice]" />
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].Columns[discontinued]"
+                      cachedDataType="bool"
+                      cachedName="discontinued"
+                      externalMetadataColumnId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[Discontinued]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[discontinued]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                      dataType="i4"
+                      name="ProductId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[ProductName]"
+                      dataType="wstr"
+                      length="40"
+                      name="ProductName" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[SupplierId]"
+                      dataType="i4"
+                      name="SupplierId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[CategoryId]"
+                      dataType="i4"
+                      name="CategoryId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[Unitprice]"
+                      dataType="numeric"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input].ExternalColumns[Discontinued]"
+                      dataType="bool"
+                      name="Discontinued" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Articole\Export to Articole.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Articole\Export to Articole.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Articole\Export to Articole.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Articole\Export to Articole.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Articole\Export to Articole.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Articole\Export to Error"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Export to Error"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[ErrorImportArticole]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Articole\Export to Error.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vanzari Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vanzari Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].Columns[Flat File Source Error Output Column]"
+                      cachedCodepage="1250"
+                      cachedDataType="text"
+                      cachedName="Flat File Source Error Output Column"
+                      externalMetadataColumnId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]" />
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].Columns[ErrorCode]"
+                      cachedDataType="i4"
+                      cachedName="ErrorCode"
+                      externalMetadataColumnId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[ErrorCode]" />
+                    <inputColumn
+                      refId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].Columns[ErrorColumn]"
+                      cachedDataType="i4"
+                      cachedName="ErrorColumn"
+                      externalMetadataColumnId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[ErrorColumn]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].ExternalColumns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      name="Flat File Source Error Output Column" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].ExternalColumns[ErrorCode]"
+                      dataType="i4"
+                      name="ErrorCode" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input].ExternalColumns[ErrorColumn]"
+                      dataType="i4"
+                      name="ErrorColumn" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Articole\Export to Error.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Articole\Export to Error.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Articole\Export to Error.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Articole\Export to Error.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Articole\Export to Error.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Articole\Import Articole"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1048"
+              name="Import Articole"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Articole\Import Articole.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection - Articole]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Articole]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[productid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[productid]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[productid]"
+                      name="productid"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[productname]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[productname]"
+                      length="40"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[productname]"
+                      name="productname"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[supplierid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[supplierid]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[supplierid]"
+                      name="supplierid"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[categoryid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[categoryid]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[categoryid]"
+                      name="categoryid"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[unitprice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[unitprice]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[unitprice]"
+                      name="unitprice"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[discontinued]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="RedirectRow"
+                      externalMetadataColumnId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[discontinued]"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].Columns[discontinued]"
+                      name="discontinued"
+                      truncationRowDisposition="RedirectRow">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[productid]"
+                      dataType="i4"
+                      name="productid" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[productname]"
+                      dataType="wstr"
+                      length="40"
+                      name="productname" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[supplierid]"
+                      dataType="i4"
+                      name="supplierid" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[categoryid]"
+                      dataType="i4"
+                      name="categoryid" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[unitprice]"
+                      dataType="cy"
+                      name="unitprice" />
+                    <externalMetadataColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output].ExternalColumns[discontinued]"
+                      dataType="bool"
+                      name="discontinued" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Articole.Paths[Flat File Source Error Output]"
+              endId="Package\Import Articole\Export to Error.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Error Output"
+              startId="Package\Import Articole\Import Articole.Outputs[Flat File Source Error Output]" />
+            <path
+              refId="Package\Import Articole.Paths[Flat File Source Output]"
+              endId="Package\Import Articole\Export to Articole.Inputs[OLE DB Destination Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Articole\Import Articole.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Import Comenzi"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{AD14ABF5-EA50-4F09-9E07-8DD223DD81D5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Import Comenzi"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Import Comenzi\Export 2 Comenzi no Match"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Export 2 Comenzi no Match"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Comenzi_not_matched]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Comenzi\Export 2 Comenzi no Match.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vanzari Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vanzari Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].Columns[orderid]"
+                      cachedDataType="i4"
+                      cachedName="orderid"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[Orderid]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[orderid]" />
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].Columns[productid]"
+                      cachedDataType="i4"
+                      cachedName="productid"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[productid]" />
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].Columns[unitprice]"
+                      cachedDataType="cy"
+                      cachedName="unitprice"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[Unitprice]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[unitprice]" />
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].Columns[qty]"
+                      cachedDataType="i2"
+                      cachedName="qty"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[Qty]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[qty]" />
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[Discount]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[discount]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[Orderid]"
+                      dataType="i4"
+                      name="Orderid" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                      dataType="i4"
+                      name="ProductId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[Unitprice]"
+                      dataType="numeric"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[Qty]"
+                      dataType="i4"
+                      name="Qty" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input].ExternalColumns[Discount]"
+                      dataType="numeric"
+                      name="Discount"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Comenzi\Export 2 Comenzi no Match.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Comenzi\Export 2 Comenzi no Match.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi no Match.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Comenzi\Export 2 Comenzi no Match.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Comenzi\Export 2 Comenzi with Match"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Export 2 Comenzi with Match"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Comenzi]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Comenzi\Export 2 Comenzi with Match.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vanzari Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vanzari Connection]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].Columns[orderid]"
+                      cachedDataType="i4"
+                      cachedName="orderid"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[Orderid]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[orderid]" />
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].Columns[unitprice]"
+                      cachedDataType="cy"
+                      cachedName="unitprice"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[Unitprice]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[unitprice]" />
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].Columns[qty]"
+                      cachedDataType="i2"
+                      cachedName="qty"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[Qty]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[qty]" />
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].Columns[discount]"
+                      cachedDataType="numeric"
+                      cachedName="discount"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[Discount]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[discount]" />
+                    <inputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].Columns[productid]"
+                      cachedDataType="i4"
+                      cachedName="productid"
+                      externalMetadataColumnId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                      lineageId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Match Output].Columns[productid]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[Orderid]"
+                      dataType="i4"
+                      name="Orderid" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[ProductId]"
+                      dataType="i4"
+                      name="ProductId" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[Unitprice]"
+                      dataType="numeric"
+                      name="Unitprice"
+                      precision="18"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[Qty]"
+                      dataType="i4"
+                      name="Qty" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input].ExternalColumns[Discount]"
+                      dataType="numeric"
+                      name="Discount"
+                      precision="18"
+                      scale="2" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Comenzi\Export 2 Comenzi with Match.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Comenzi\Export 2 Comenzi with Match.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Comenzi\Export 2 Comenzi with Match.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Comenzi\Export 2 Comenzi with Match.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Comenzi\Import Comenzi"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1048"
+              name="Import Comenzi"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Comenzi\Import Comenzi.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection - Comenzi]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection - Comenzi]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[orderid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[orderid]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[orderid]"
+                      name="orderid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[productid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[productid]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[productid]"
+                      name="productid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[unitprice]"
+                      dataType="cy"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[unitprice]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[unitprice]"
+                      name="unitprice"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[qty]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[qty]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[qty]"
+                      name="qty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[discount]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[discount]"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[discount]"
+                      name="discount"
+                      precision="18"
+                      scale="3"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[orderid]"
+                      dataType="i4"
+                      name="orderid" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[productid]"
+                      dataType="i4"
+                      name="productid" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[unitprice]"
+                      dataType="cy"
+                      name="unitprice" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[qty]"
+                      dataType="i2"
+                      name="qty" />
+                    <externalMetadataColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].ExternalColumns[discount]"
+                      dataType="numeric"
+                      name="discount"
+                      precision="18"
+                      scale="3" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1250"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Import Comenzi\Lookup Product Id"
+              componentClassID="Microsoft.Lookup"
+              contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+              description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+              name="Lookup Product Id"
+              usesDispositions="true"
+              version="6">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement that generates the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select productid from dbo.Articole</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                  expressionType="Notify"
+                  name="SqlCommandParam"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select productid from dbo.Articole) [refTable]
+where [refTable].[productid] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of connection used to access the reference dataset."
+                  name="ConnectionType"
+                  typeConverter="LookupConnectionType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the cache type of the lookup table."
+                  name="CacheType"
+                  typeConverter="CacheType">2</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                  name="NoMatchBehavior"
+                  typeConverter="LookupNoMatchBehavior">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                  name="NoMatchCachePercentage">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                  name="MaxMemoryUsage">25</property>
+                <property
+                  dataType="System.Int64"
+                  description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                  name="MaxMemoryUsage64">25</property>
+                <property
+                  dataType="System.String"
+                  description="Indicates whether to reference metadata in an XML format."
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="productid" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                <property
+                  containsID="true"
+                  dataType="System.String"
+                  description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                  name="ParameterMap">#{Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[productid]};</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1250</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                  name="TreatDuplicateKeysAsError">false</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Import Comenzi\Lookup Product Id.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Vanzari Connection]"
+                  connectionManagerRefId="Package.ConnectionManagers[Vanzari Connection]"
+                  description="Connection manager used to access lookup data."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Import Comenzi\Lookup Product Id.Inputs[Lookup Input]"
+                  name="Lookup Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Import Comenzi\Lookup Product Id.Inputs[Lookup Input].Columns[productid]"
+                      cachedDataType="i4"
+                      cachedName="productid"
+                      lineageId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output].Columns[productid]">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table that a column joins."
+                          name="JoinToReferenceColumn">productid</property>
+                        <property
+                          dataType="System.Null"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn" />
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Match Output]"
+                  errorOrTruncationOperation="Lookup"
+                  exclusionGroup="1"
+                  name="Lookup Match Output"
+                  synchronousInputId="Package\Import Comenzi\Lookup Product Id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Match Output].Columns[productid]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Copy Column"
+                      lineageId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Match Output].Columns[productid]"
+                      name="productid"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the column in the reference table from which a column is copied."
+                          name="CopyFromReferenceColumn">productid</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup No Match Output]"
+                  description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                  exclusionGroup="1"
+                  name="Lookup No Match Output"
+                  synchronousInputId="Package\Import Comenzi\Lookup Product Id.Inputs[Lookup Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Lookup Error Output"
+                  synchronousInputId="Package\Import Comenzi\Lookup Product Id.Inputs[Lookup Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Import Comenzi.Paths[Flat File Source Output]"
+              endId="Package\Import Comenzi\Lookup Product Id.Inputs[Lookup Input]"
+              name="Flat File Source Output"
+              startId="Package\Import Comenzi\Import Comenzi.Outputs[Flat File Source Output]" />
+            <path
+              refId="Package\Import Comenzi.Paths[Lookup Match Output]"
+              endId="Package\Import Comenzi\Export 2 Comenzi with Match.Inputs[OLE DB Destination Input]"
+              name="Lookup Match Output"
+              startId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup Match Output]" />
+            <path
+              refId="Package\Import Comenzi.Paths[Lookup No Match Output]"
+              endId="Package\Import Comenzi\Export 2 Comenzi no Match.Inputs[OLE DB Destination Input]"
+              name="Lookup No Match Output"
+              startId="Package\Import Comenzi\Lookup Product Id.Outputs[Lookup No Match Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{012484C0-F982-4054-BA0A-002982DB51DA}"
+      DTS:From="Package\Import Articole"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Import Comenzi" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{CD50E311-4C76-4BB4-9BBB-C500D009ABCC}"
+      DTS:From="Package\Import Comenzi"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Export Report" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Import Articole"
+          TopLeft="278.5,41.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Import Comenzi"
+          TopLeft="282.5,123.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="357.25,83.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="146,42"
+          Id="Package\Export Report"
+          TopLeft="290.5,200.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="362,165.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Import Articole">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Import Articole\Import Articole"
+          TopLeft="245.5,28.5" />
+        <NodeLayout
+          Size="162,42"
+          Id="Package\Import Articole\Export to Articole"
+          TopLeft="139,103" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Import Articole\Export to Error"
+          TopLeft="346,105" />
+        <EdgeLayout
+          Id="Package\Import Articole.Paths[Flat File Source Output]"
+          TopLeft="297.166666666667,70.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-77.1666666666667,32.5"
+              Start="0,0"
+              End="-77.1666666666667,25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.20445609436435" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.20445609436435"
+                    Point2="0,13.2044560943644"
+                    Point3="-4,13.2044560943644" />
+                  <mssgle:LineSegment
+                    End="-73.1666666666667,13.2044560943644" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-73.1666666666667,13.2044560943644"
+                    Point2="-77.1666666666667,13.2044560943644"
+                    Point3="-77.1666666666667,17.2044560943644" />
+                  <mssgle:LineSegment
+                    End="-77.1666666666667,25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Articole.Paths[Flat File Source Error Output]"
+          TopLeft="344.833333333333,70.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="76.6666666666667,34.5"
+              Start="0,0"
+              End="76.6666666666667,27">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.0170380078637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.0170380078637"
+                    Point2="0,14.0170380078637"
+                    Point3="4,14.0170380078637" />
+                  <mssgle:LineSegment
+                    End="72.6666666666667,14.0170380078637" />
+                  <mssgle:CubicBezierSegment
+                    Point1="72.6666666666667,14.0170380078637"
+                    Point2="76.6666666666667,14.0170380078637"
+                    Point3="76.6666666666667,18.0170380078637" />
+                  <mssgle:LineSegment
+                    End="76.6666666666667,27" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.2930533854166,19.0170380078637,127.2527734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Articole\Export to Articole">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Articole\Export to Error">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Import Comenzi">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Import Comenzi\Import Comenzi"
+          TopLeft="216.5,34.5" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\Import Comenzi\Export 2 Comenzi with Match"
+          TopLeft="97.5,195.5" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Import Comenzi\Export 2 Comenzi no Match"
+          TopLeft="328.5,197.5" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Import Comenzi\Lookup Product Id"
+          TopLeft="218.5,105.5" />
+        <EdgeLayout
+          Id="Package\Import Comenzi.Paths[Flat File Source Output]"
+          TopLeft="298.25,76.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Comenzi.Paths[Lookup Match Output]"
+          TopLeft="275.5,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-93,48"
+              Start="0,0"
+              End="-93,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.4733096085409" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.4733096085409"
+                    Point2="0,19.4733096085409"
+                    Point3="-4,19.4733096085409" />
+                  <mssgle:LineSegment
+                    End="-89,19.4733096085409" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-89,19.4733096085409"
+                    Point2="-93,19.4733096085409"
+                    Point3="-93,23.4733096085409" />
+                  <mssgle:LineSegment
+                    End="-93,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-94.69138671875,24.4733096085409,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Import Comenzi.Paths[Lookup No Match Output]"
+          TopLeft="328.5,147.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="84,50"
+              Start="0,0"
+              End="84,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.2846975088968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.2846975088968"
+                    Point2="0,20.2846975088968"
+                    Point3="4,20.2846975088968" />
+                  <mssgle:LineSegment
+                    End="80,20.2846975088968" />
+                  <mssgle:CubicBezierSegment
+                    Point1="80,20.2846975088968"
+                    Point2="84,20.2846975088968"
+                    Point3="84,24.2846975088968" />
+                  <mssgle:LineSegment
+                    End="84,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-13.80638671875,25.2846975088968,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Comenzi\Export 2 Comenzi with Match">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Comenzi\Export 2 Comenzi no Match">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Import Comenzi\Lookup Product Id">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:int">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Export Report">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Export Report\Import Articole"
+          TopLeft="72.5,46.5" />
+        <NodeLayout
+          Size="156,42"
+          Id="Package\Export Report\Import Comenzi"
+          TopLeft="257.5,47.5" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Export Report\Sort Articole by Prod ID"
+          TopLeft="81.5,113.5" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Export Report\Sort Comenzi by Prod ID"
+          TopLeft="274.5,115.5" />
+        <NodeLayout
+          Size="128,42"
+          Id="Package\Export Report\Inner Join"
+          TopLeft="182.5,200.5" />
+        <NodeLayout
+          Size="139,42"
+          Id="Package\Export Report\Derive Sales"
+          TopLeft="174.5,276.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Export Report\Sum Sales"
+          TopLeft="186.5,351.5" />
+        <EdgeLayout
+          Id="Package\Export Report.Paths[OLE DB Source Output]"
+          TopLeft="151.5,88.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25"
+              Start="0,0"
+              End="0,17.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Export Report.Paths[OLE DB Source Output1]"
+          TopLeft="335.5,89.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.5,26"
+              Start="0,0"
+              End="14.5,18.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9"
+                    Point2="0,13"
+                    Point3="4,13" />
+                  <mssgle:LineSegment
+                    End="10.5,13" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.5,13"
+                    Point2="14.5,13"
+                    Point3="14.5,17" />
+                  <mssgle:LineSegment
+                    End="14.5,18.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Export Report.Paths[Sort Output]"
+          TopLeft="155,155.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="71.5,45"
+              Start="0,0"
+              End="71.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,22.6666666666667"
+                    Point2="0,26.6666666666667"
+                    Point3="4,26.6666666666667" />
+                  <mssgle:LineSegment
+                    End="67.5,26.6666666666667" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.5,26.6666666666667"
+                    Point2="71.5,26.6666666666667"
+                    Point3="71.5,30.6666666666667" />
+                  <mssgle:LineSegment
+                    End="71.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Export Report.Paths[Sort Output1]"
+          TopLeft="350,157.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-83.5,43"
+              Start="0,0"
+              End="-83.5,35.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4814814814815" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21.4814814814815"
+                    Point2="0,25.4814814814815"
+                    Point3="-4,25.4814814814815" />
+                  <mssgle:LineSegment
+                    End="-79.5,25.4814814814815" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-79.5,25.4814814814815"
+                    Point2="-83.5,25.4814814814815"
+                    Point3="-83.5,29.4814814814815" />
+                  <mssgle:LineSegment
+                    End="-83.5,35.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Export Report.Paths[Merge Join Output]"
+          TopLeft="245.25,242.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Export Report.Paths[Derived Column Output]"
+          TopLeft="247.75,318.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Export Report\Export 2 Report"
+          TopLeft="174.5,423.5" />
+        <EdgeLayout
+          Id="Package\Export Report.Paths[Aggregate Output 1]"
+          TopLeft="251.75,393.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Export Report\Import Articole">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Export Report\Import Comenzi">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

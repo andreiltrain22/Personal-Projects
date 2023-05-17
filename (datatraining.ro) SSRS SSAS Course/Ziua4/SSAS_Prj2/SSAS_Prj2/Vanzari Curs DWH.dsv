@@ -1,0 +1,238 @@
+﻿<DataSourceView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ddl2="http://schemas.microsoft.com/analysisservices/2003/engine/2" xmlns:ddl2_2="http://schemas.microsoft.com/analysisservices/2003/engine/2/2" xmlns:ddl100_100="http://schemas.microsoft.com/analysisservices/2008/engine/100/100" xmlns:ddl200="http://schemas.microsoft.com/analysisservices/2010/engine/200" xmlns:ddl200_200="http://schemas.microsoft.com/analysisservices/2010/engine/200/200" xmlns:ddl300="http://schemas.microsoft.com/analysisservices/2011/engine/300" xmlns:ddl300_300="http://schemas.microsoft.com/analysisservices/2011/engine/300/300" xmlns:ddl400="http://schemas.microsoft.com/analysisservices/2012/engine/400" xmlns:ddl400_400="http://schemas.microsoft.com/analysisservices/2012/engine/400/400" xmlns:ddl500="http://schemas.microsoft.com/analysisservices/2013/engine/500" xmlns:ddl500_500="http://schemas.microsoft.com/analysisservices/2013/engine/500/500" xmlns="http://schemas.microsoft.com/analysisservices/2003/engine">
+  <ID>Vanzari Curs DWH</ID>
+  <Name>Vanzari Curs DWH</Name>
+  <CreatedTimestamp>2020-11-21T09:21:47.463333Z</CreatedTimestamp>
+  <LastSchemaUpdate>2020-11-21T09:21:47.463333Z</LastSchemaUpdate>
+  <Annotations>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:ShowFriendlyNames</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:CurrentLayout</Name>
+      <Value>_ALL_TABLES_</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:SchemaRestriction</Name>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:RetrieveRelationships</Name>
+      <Value>true</Value>
+    </Annotation>
+    <Annotation>
+      <Name>http://schemas.microsoft.com/DataWarehouse/Designer/1.0:Layouts</Name>
+      <Value>
+        <Layouts xmlns="">
+          <Diagram>
+            <Name>_ALL_TABLES_</Name>
+            <DiagramLayout />
+            <ShowRelationshipNames>False</ShowRelationshipNames>
+            <UseDiagramDefaultLayout>True</UseDiagramDefaultLayout>
+            <DiagramViewPortLeft>0</DiagramViewPortLeft>
+            <DiagramViewPortTop>0</DiagramViewPortTop>
+            <DiagramBoundingLeft>0</DiagramBoundingLeft>
+            <DiagramBoundingTop>0</DiagramBoundingTop>
+            <DiagramZoom>100</DiagramZoom>
+          </Diagram>
+        </Layouts>
+      </Value>
+    </Annotation>
+  </Annotations>
+  <DataSourceID>Vanzari Curs DWH</DataSourceID>
+  <Schema>
+    <xs:schema id="Vanzari_x0020_Curs_x0020_DWH" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop">
+      <xs:element name="Vanzari_x0020_Curs_x0020_DWH" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+        <xs:complexType>
+          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element name="dbo_DimClienti" msprop:DbTableName="DimClienti" msprop:FriendlyName="DimClienti" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idclient" msprop:DbColumnName="idclient" msprop:FriendlyName="idclient" type="xs:int" />
+                  <xs:element name="ClientKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:DbColumnName="ClientKey" msprop:FriendlyName="ClientKey" type="xs:int" />
+                  <xs:element name="DenumireClient" msprop:DbColumnName="DenumireClient" msprop:FriendlyName="DenumireClient" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="idlocatie" msprop:DbColumnName="idlocatie" msprop:FriendlyName="idlocatie" type="xs:int" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimDate" msprop:DbTableName="DimDate" msprop:FriendlyName="DimDate" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="DateKey" msprop:DbColumnName="DateKey" msprop:FriendlyName="DateKey" type="xs:int" />
+                  <xs:element name="Date" msprop:DbColumnName="Date" msprop:FriendlyName="Date" type="xs:dateTime" />
+                  <xs:element name="Day" msprop:DbColumnName="Day" msprop:FriendlyName="Day" type="xs:unsignedByte" />
+                  <xs:element name="DaySuffix" msprop:DbColumnName="DaySuffix" msprop:FriendlyName="DaySuffix">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="2" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Weekday" msprop:DbColumnName="Weekday" msprop:FriendlyName="Weekday" type="xs:unsignedByte" />
+                  <xs:element name="WeekDayName" msprop:DbColumnName="WeekDayName" msprop:FriendlyName="WeekDayName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="IsWeekend" msprop:DbColumnName="IsWeekend" msprop:FriendlyName="IsWeekend" type="xs:boolean" />
+                  <xs:element name="IsHoliday" msprop:DbColumnName="IsHoliday" msprop:FriendlyName="IsHoliday" type="xs:boolean" />
+                  <xs:element name="HolidayText" msprop:DbColumnName="HolidayText" msprop:FriendlyName="HolidayText" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="64" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="DOWInMonth" msprop:DbColumnName="DOWInMonth" msprop:FriendlyName="DOWInMonth" type="xs:unsignedByte" />
+                  <xs:element name="DayOfYear" msprop:DbColumnName="DayOfYear" msprop:FriendlyName="DayOfYear" type="xs:short" />
+                  <xs:element name="WeekOfMonth" msprop:DbColumnName="WeekOfMonth" msprop:FriendlyName="WeekOfMonth" type="xs:unsignedByte" />
+                  <xs:element name="WeekOfYear" msprop:DbColumnName="WeekOfYear" msprop:FriendlyName="WeekOfYear" type="xs:unsignedByte" />
+                  <xs:element name="ISOWeekOfYear" msprop:DbColumnName="ISOWeekOfYear" msprop:FriendlyName="ISOWeekOfYear" type="xs:unsignedByte" />
+                  <xs:element name="Month" msprop:DbColumnName="Month" msprop:FriendlyName="Month" type="xs:unsignedByte" />
+                  <xs:element name="MonthName" msprop:DbColumnName="MonthName" msprop:FriendlyName="MonthName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="10" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Quarter" msprop:DbColumnName="Quarter" msprop:FriendlyName="Quarter" type="xs:unsignedByte" />
+                  <xs:element name="QuarterName" msprop:DbColumnName="QuarterName" msprop:FriendlyName="QuarterName">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="6" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Year" msprop:DbColumnName="Year" msprop:FriendlyName="Year" type="xs:int" />
+                  <xs:element name="MMYYYY" msprop:DbColumnName="MMYYYY" msprop:FriendlyName="MMYYYY">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="6" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="MonthYear" msprop:DbColumnName="MonthYear" msprop:FriendlyName="MonthYear">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="7" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="FirstDayOfMonth" msprop:DbColumnName="FirstDayOfMonth" msprop:FriendlyName="FirstDayOfMonth" type="xs:dateTime" />
+                  <xs:element name="LastDayOfMonth" msprop:DbColumnName="LastDayOfMonth" msprop:FriendlyName="LastDayOfMonth" type="xs:dateTime" />
+                  <xs:element name="FirstDayOfQuarter" msprop:DbColumnName="FirstDayOfQuarter" msprop:FriendlyName="FirstDayOfQuarter" type="xs:dateTime" />
+                  <xs:element name="LastDayOfQuarter" msprop:DbColumnName="LastDayOfQuarter" msprop:FriendlyName="LastDayOfQuarter" type="xs:dateTime" />
+                  <xs:element name="FirstDayOfYear" msprop:DbColumnName="FirstDayOfYear" msprop:FriendlyName="FirstDayOfYear" type="xs:dateTime" />
+                  <xs:element name="LastDayOfYear" msprop:DbColumnName="LastDayOfYear" msprop:FriendlyName="LastDayOfYear" type="xs:dateTime" />
+                  <xs:element name="FirstDayOfNextMonth" msprop:DbColumnName="FirstDayOfNextMonth" msprop:FriendlyName="FirstDayOfNextMonth" type="xs:dateTime" />
+                  <xs:element name="FirstDayOfNextYear" msprop:DbColumnName="FirstDayOfNextYear" msprop:FriendlyName="FirstDayOfNextYear" type="xs:dateTime" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimFurnizori" msprop:DbTableName="DimFurnizori" msprop:FriendlyName="DimFurnizori" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idfurnizor" msprop:DbColumnName="idfurnizor" msprop:FriendlyName="idfurnizor" type="xs:int" minOccurs="0" />
+                  <xs:element name="FurnizorKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:DbColumnName="FurnizorKey" msprop:FriendlyName="FurnizorKey" type="xs:int" />
+                  <xs:element name="DenumireFurnizor" msprop:DbColumnName="DenumireFurnizor" msprop:FriendlyName="DenumireFurnizor" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="Locatie" msprop:DbColumnName="Locatie" msprop:FriendlyName="Locatie" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_DimProduse" msprop:DbTableName="DimProduse" msprop:FriendlyName="DimProduse" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idprodus" msprop:DbColumnName="idprodus" msprop:FriendlyName="idprodus" type="xs:int" />
+                  <xs:element name="ProdusKey" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:DbColumnName="ProdusKey" msprop:FriendlyName="ProdusKey" type="xs:int" />
+                  <xs:element name="DenumireProdus" msprop:DbColumnName="DenumireProdus" msprop:FriendlyName="DenumireProdus" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="stoc" msprop:DbColumnName="stoc" msprop:FriendlyName="stoc" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="perioadaexprirare" msprop:DbColumnName="perioadaexprirare" msprop:FriendlyName="perioadaexprirare" type="xs:int" minOccurs="0" />
+                  <xs:element name="DenumireCategorie" msprop:DbColumnName="DenumireCategorie" msprop:FriendlyName="DenumireCategorie" minOccurs="0">
+                    <xs:simpleType>
+                      <xs:restriction base="xs:string">
+                        <xs:maxLength value="255" />
+                      </xs:restriction>
+                    </xs:simpleType>
+                  </xs:element>
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+            <xs:element name="dbo_FactFacturi" msprop:DbTableName="FactFacturi" msprop:FriendlyName="FactFacturi" msprop:DbSchemaName="dbo" msprop:TableType="Table">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element name="idfactura" msprop:DbColumnName="idfactura" msprop:FriendlyName="idfactura" type="xs:int" />
+                  <xs:element name="ProdusKey" msprop:DbColumnName="ProdusKey" msprop:FriendlyName="ProdusKey" type="xs:int" />
+                  <xs:element name="ClientKey" msprop:DbColumnName="ClientKey" msprop:FriendlyName="ClientKey" type="xs:int" />
+                  <xs:element name="FurnizorKey" msprop:DbColumnName="FurnizorKey" msprop:FriendlyName="FurnizorKey" type="xs:int" />
+                  <xs:element name="DateKey" msprop:DbColumnName="DateKey" msprop:FriendlyName="DateKey" type="xs:int" />
+                  <xs:element name="Cantitate" msprop:DbColumnName="Cantitate" msprop:FriendlyName="Cantitate" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Pret" msprop:DbColumnName="Pret" msprop:FriendlyName="Pret" type="xs:decimal" minOccurs="0" />
+                  <xs:element name="Valoare" msdata:ReadOnly="true" msprop:DbColumnName="Valoare" msprop:FriendlyName="Valoare" type="xs:decimal" minOccurs="0" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:choice>
+        </xs:complexType>
+        <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimClienti" />
+          <xs:field xpath="ClientKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimDate_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimDate" />
+          <xs:field xpath="DateKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimFurnizori_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimFurnizori" />
+          <xs:field xpath="FurnizorKey" />
+        </xs:unique>
+        <xs:unique name="dbo_DimProduse_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+          <xs:selector xpath=".//dbo_DimProduse" />
+          <xs:field xpath="ProdusKey" />
+        </xs:unique>
+        <xs:keyref name="FK_FactFacturi_DimDate" refer="dbo_DimDate_Constraint1">
+          <xs:selector xpath=".//dbo_FactFacturi" />
+          <xs:field xpath="DateKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFacturi_DimProduse" refer="dbo_DimProduse_Constraint1">
+          <xs:selector xpath=".//dbo_FactFacturi" />
+          <xs:field xpath="ProdusKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFacturi_DimClienti" refer="Constraint1">
+          <xs:selector xpath=".//dbo_FactFacturi" />
+          <xs:field xpath="ClientKey" />
+        </xs:keyref>
+        <xs:keyref name="FK_FactFacturi_DimFurnizori" refer="dbo_DimFurnizori_Constraint1">
+          <xs:selector xpath=".//dbo_FactFacturi" />
+          <xs:field xpath="FurnizorKey" />
+        </xs:keyref>
+      </xs:element>
+    </xs:schema>
+    <Vanzari_x0020_Curs_x0020_DWH xmlns="" />
+  </Schema>
+</DataSourceView>
